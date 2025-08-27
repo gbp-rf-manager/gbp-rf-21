@@ -12,3 +12,17 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: /sitemap.xml
+
+# Crawl-delay for bots
+Crawl-delay: 1
+
+# Block access to non-essential files
+Disallow: /src/
+Disallow: /_next/
+Disallow: /api/
+Disallow: *.js$
+Disallow: *.css$
+Disallow: *.json$

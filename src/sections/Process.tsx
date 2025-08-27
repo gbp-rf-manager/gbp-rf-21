@@ -9,20 +9,25 @@ export const Process = () => {
     { icon: Wrench, title: "Ремонт", text: "Ремонт с гарантией (1–3 часа)" },
   ];
   return (
-    <section className="section py-12 sm:py-16">
-      <Reveal>
-        <h2 className="text-2xl font-semibold sm:text-3xl">Как мы работаем</h2>
-      </Reveal>
-      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <section className="section py-10 sm:py-14 md:py-16">
+      <header>
+        <Reveal>
+          <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">Как мы работаем</h2>
+        </Reveal>
+        <Reveal delay={60}>
+          <p className="mt-2 text-muted-foreground sm:mt-3">Простой и понятный процесс от звонка до готового результата</p>
+        </Reveal>
+      </header>
+      <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
         {steps.map((s, i) => (
           <Reveal key={s.title} delay={i * 80}>
-            <div className="rounded-lg border bg-card p-6 shadow-sm">
+            <article className="rounded-lg border bg-card p-5 shadow-sm touch-manipulation sm:p-6">
               <div className="flex items-center gap-3">
-                <s.icon className="h-5 w-5 text-primary" />
-                <div className="text-lg font-semibold">{s.title}</div>
+                <s.icon className="h-6 w-6 flex-shrink-0 text-primary" aria-hidden="true" />
+                <h3 className="text-lg font-semibold">{s.title}</h3>
               </div>
-              <p className="mt-3 text-sm text-muted-foreground">{s.text}</p>
-            </div>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+            </article>
           </Reveal>
         ))}
       </div>

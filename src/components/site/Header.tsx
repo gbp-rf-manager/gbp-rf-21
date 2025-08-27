@@ -39,29 +39,29 @@ export const Header = () => {
           </Button>
         </div>
 
-        <div className="md:hidden">
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button variant="nav" size="icon" aria-label="Открыть меню">
-                <Menu />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="flex flex-col gap-6">
-              <a href="#top" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-                <div className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-secondary/90 text-secondary-foreground">
-                  <Wrench className="h-4 w-4" />
-                </div>
-                <span className="text-base font-semibold">ProFixNow</span>
+      <div className="md:hidden">
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
+            <Button variant="nav" size="icon" className="min-h-[44px] min-w-[44px]" aria-label="Открыть меню">
+              <Menu />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="flex flex-col gap-6">
+            <a href="#top" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+              <div className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-secondary/90 text-secondary-foreground">
+                <Wrench className="h-4 w-4" />
+              </div>
+              <span className="text-base font-semibold">ProFixNow</span>
+            </a>
+            <NavLinks onClick={() => setOpen(false)} />
+            <Button asChild variant="phone" size="lg" className="mt-auto min-h-[48px]" aria-label={`Позвонить ${phone}`}>
+              <a href={telHref}>
+                <Phone className="mr-2" /> {phone}
               </a>
-              <NavLinks onClick={() => setOpen(false)} />
-              <Button asChild variant="phone" size="lg" className="mt-auto" aria-label={`Позвонить ${phone}`}>
-                <a href={telHref}>
-                  <Phone className="mr-2" /> {phone}
-                </a>
-              </Button>
-            </SheetContent>
-          </Sheet>
-        </div>
+            </Button>
+          </SheetContent>
+        </Sheet>
+      </div>
       </div>
     </header>
   );

@@ -16,6 +16,7 @@ const Index = () => {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       name: "ProFixNow",
+      description: "Профессиональный ремонт бытовой техники в Москве. Выезд за 30 минут, гарантия до 2 лет, бесплатная диагностика.",
       image: `${url}/favicon.ico`,
       telephone: "+7 495 128 09 84",
       url,
@@ -25,9 +26,50 @@ const Index = () => {
         addressLocality: "Москва",
         addressCountry: "RU"
       },
-      areaServed: "Москва",
+      areaServed: {
+        "@type": "City",
+        name: "Москва"
+      },
       openingHours: "Mo-Su 08:00-22:00",
-      sameAs: []
+      sameAs: [],
+      priceRange: "$$" as const,
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "150",
+        bestRating: "5",
+        worstRating: "1"
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Услуги по ремонту бытовой техники",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Ремонт стиральных машин",
+              description: "Профессиональный ремонт стиральных машин всех марок с гарантией"
+            }
+          },
+          {
+            "@type": "Offer", 
+            itemOffered: {
+              "@type": "Service",
+              name: "Ремонт холодильников",
+              description: "Качественный ремонт холодильников с выездом на дом"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service", 
+              name: "Ремонт посудомоечных машин",
+              description: "Быстрый ремонт посудомоечных машин на дому"
+            }
+          }
+        ]
+      }
     }
   }, []);
 
@@ -36,9 +78,9 @@ const Index = () => {
   }, []);
 
   return (
-    <div>
+    <div className="will-change-auto">
       <Header />
-      <main>
+      <main role="main">
         <Hero />
         <Services />
         <Benefits />

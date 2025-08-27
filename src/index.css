@@ -106,12 +106,40 @@
     @apply border-border;
   }
 
-  html { scroll-behavior: smooth; }
+  html { 
+    scroll-behavior: smooth;
+    /* Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 
   body {
     @apply bg-background text-foreground;
     font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     background-image: radial-gradient(1200px 300px at 10% -10%, hsl(var(--secondary) / 0.06), transparent), radial-gradient(800px 200px at 110% -10%, hsl(var(--accent) / 0.08), transparent);
+    /* Prevent horizontal scroll */
+    overflow-x: hidden;
+  }
+
+  /* Better focus visibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+  }
+
+  /* Touch targets optimization */
+  button, a, input, select, textarea, [role="button"] {
+    touch-action: manipulation;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -120,4 +148,15 @@
   .shadow-elegant { box-shadow: var(--shadow-elegant); }
   .shadow-glow { box-shadow: var(--shadow-glow); }
   .section { @apply container mx-auto px-4 sm:px-6 lg:px-8; }
+  
+  /* Touch-friendly targets */
+  .touch-manipulation { 
+    touch-action: manipulation;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Performance optimizations */
+  .will-change-transform { will-change: transform; }
+  .will-change-auto { will-change: auto; }
 }

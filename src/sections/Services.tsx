@@ -67,28 +67,38 @@ const services = [
 
 export const Services = () => {
   return (
-    <section id="services" className="section scroll-mt-24 py-12 sm:py-16">
-      <Reveal>
-        <h2 className="text-2xl font-semibold sm:text-3xl">Наши услуги</h2>
-      </Reveal>
-      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <section id="services" className="section scroll-mt-24 py-10 sm:py-14 md:py-16">
+      <header>
+        <Reveal>
+          <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">Наши услуги</h2>
+        </Reveal>
+        <Reveal delay={60}>
+          <p className="mt-2 text-muted-foreground sm:mt-3">Профессиональный ремонт всех видов бытовой техники</p>
+        </Reveal>
+      </header>
+      <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
         {services.map((s, idx) => (
           <Reveal key={s.title} delay={idx * 70}>
-            <Card className="h-full">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <s.icon className="h-5 w-5 text-primary" aria-hidden />
-                  <CardTitle className="text-lg">{s.title}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
-                  {s.points.map((p) => (
-                    <li key={p}>{p}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+            <article className="h-full">
+              <Card className="h-full touch-manipulation">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3">
+                    <s.icon className="h-6 w-6 flex-shrink-0 text-primary sm:h-5 sm:w-5" aria-hidden="true" />
+                    <CardTitle className="text-base font-semibold leading-tight sm:text-lg">{s.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground sm:space-y-1.5">
+                    {s.points.map((p) => (
+                      <li key={p} className="flex items-start">
+                        <span className="mr-2 mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary"></span>
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </article>
           </Reveal>
         ))}
       </div>
