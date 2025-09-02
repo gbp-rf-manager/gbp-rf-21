@@ -10,11 +10,9 @@ export const Hero = () => {
   return (
     <section id="top" className="section relative grid grid-cols-1 items-center gap-6 py-8 sm:gap-8 sm:py-12 md:py-16 lg:grid-cols-2 lg:gap-12 lg:py-20">
       <div>
-        <Reveal>
-          <h1 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
-            Профессиональный ремонт техники в Москве
-          </h1>
-        </Reveal>
+        <h1 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+          Профессиональный ремонт техники в Москве
+        </h1>
         <Reveal delay={80}>
           <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-4 sm:text-lg sm:leading-relaxed">
             Быстрый и надёжный ремонт с гарантией до 2 лет. Сертифицированные мастера, оригинальные запчасти, честные цены.
