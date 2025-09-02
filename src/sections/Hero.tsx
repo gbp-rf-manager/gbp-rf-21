@@ -10,7 +10,7 @@ export const Hero = () => {
   return (
     <section id="top" className="section relative grid grid-cols-1 items-center gap-6 py-8 sm:gap-8 sm:py-12 md:py-16 lg:grid-cols-2 lg:gap-12 lg:py-20">
       <div>
-        <h1 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+        <h1 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl will-change-auto" style={{ contentVisibility: 'visible', containIntrinsicSize: 'auto auto' }}>
           Профессиональный ремонт техники в Москве
         </h1>
         <Reveal delay={80}>
