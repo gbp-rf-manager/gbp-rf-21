@@ -1,107 +1,218 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Droplets, Radio, ShieldCheck, Snowflake, Wrench, Cog } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/Reveal";
+import { servicesData, type ServiceCategory, type ServiceItem } from "@/data/services-data";
+import { LayoutGrid, List } from "lucide-react";
 
-const services = [
-  {
-    icon: Wrench,
-    title: "Ремонт стиральных машин",
-    points: [
-      "Замена подшипников и сальников",
-      "Ремонт модуля управления",
-      "Чистка и дезинфекция",
-      "Замена ТЭНа и помпы",
-    ],
-  },
-  {
-    icon: Snowflake,
-    title: "Ремонт холодильников",
-    points: [
-      "Заправка и замена фреона",
-      "Замена компрессора",
-      "Ремонт системы No Frost",
-      "Замена термостата",
-    ],
-  },
-  {
-    icon: Droplets,
-    title: "Ремонт посудомоечных машин",
-    points: [
-      "Замена циркуляционного насоса",
-      "Чистка фильтров и форсунок",
-      "Ремонт панели управления",
-      "Устранение протечек",
-    ],
-  },
-  {
-    icon: Radio,
-    title: "Ремонт микроволновых печей",
-    points: [
-      "Замена магнетрона",
-      "Ремонт блока питания",
-      "Замена слюдяной пластины",
-      "Настройка мощности",
-    ],
-  },
-  {
-    icon: Cog,
-    title: "Ремонт мелкой техники",
-    points: [
-      "Замена нагревательных элементов",
-      "Ремонт электронных плат",
-      "Замена кнопок и переключателей",
-      "Профилактическое ТО",
-    ],
-  },
-  {
-    icon: ShieldCheck,
-    title: "Техническое обслуживание",
-    points: [
-      "Комплексная диагностика",
-      "Чистка и смазка механизмов",
-      "Замена расходных материалов",
-      "Настройка и калибровка",
-    ],
-  },
-];
+type LayoutMode = "cards" | "list";
+
+const phone = "+7 495 128 09 84";
+const telHref = "tel:+74951280984";
 
 export const Services = () => {
+  const [layoutMode, setLayoutMode] = useState<LayoutMode>("cards");
+
+  const handleServiceClick = (e: React.MouseEvent, serviceId: string) => {
+    e.preventDefault();
+    // Navigate to contacts section or trigger call
+    window.location.href = telHref;
+  };
+
   return (
     <section id="services" className="section scroll-mt-24 py-10 sm:py-14 md:py-16">
-      <header>
-        <Reveal>
-          <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">Наши услуги</h2>
-        </Reveal>
-        <Reveal delay={60}>
-          <p className="mt-2 text-muted-foreground sm:mt-3">Профессиональный ремонт всех видов бытовой техники</p>
+      <header className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <Reveal>
+            <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">Наши услуги</h2>
+          </Reveal>
+          <Reveal delay={60}>
+            <p className="mt-2 text-muted-foreground sm:mt-3">
+              Профессиональный ремонт техники и домашние услуги по всей Москве
+            </p>
+          </Reveal>
+        </div>
+        
+        <Reveal delay={100}>
+          <div className="flex gap-2 rounded-lg border bg-card p-1 shadow-sm">
+            <Button
+              variant={layoutMode === "cards" ? "default" : "ghost"}
+              size="sm"
+              onClick={() => setLayoutMode("cards")}
+              className="gap-2"
+              aria-label="Режим карточек"
+            >
+              <LayoutGrid className="h-4 w-4" />
+              <span className="hidden sm:inline">Карточки</span>
+            </Button>
+            <Button
+              variant={layoutMode === "list" ? "default" : "ghost"}
+              size="sm"
+              onClick={() => setLayoutMode("list")}
+              className="gap-2"
+              aria-label="Режим списка"
+            >
+              <List className="h-4 w-4" />
+              <span className="hidden sm:inline">Список</span>
+            </Button>
+          </div>
         </Reveal>
       </header>
-      <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-        {services.map((s, idx) => (
-          <Reveal key={s.title} delay={idx * 70}>
-            <article className="h-full">
-              <Card className="h-full touch-manipulation">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center gap-3">
-                    <s.icon className="h-6 w-6 flex-shrink-0 text-primary sm:h-5 sm:w-5" aria-hidden="true" />
-                    <CardTitle className="text-base font-semibold leading-tight sm:text-lg">{s.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground sm:space-y-1.5">
-                    {s.points.map((p) => (
-                      <li key={p} className="flex items-start">
-                        <span className="mr-2 mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary"></span>
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </article>
+
+      {servicesData.map((category, categoryIdx) => (
+        <div key={category.id} className="mt-10 sm:mt-12">
+          <Reveal delay={categoryIdx * 50}>
+            <h3 className="mb-6 text-xl font-semibold sm:text-2xl">{category.h2}</h3>
           </Reveal>
-        ))}
-      </div>
+
+          {layoutMode === "cards" ? (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+              {category.services.map((service, idx) => (
+                <ServiceCard
+                  key={service.id}
+                  service={service}
+                  delay={categoryIdx * 50 + idx * 60}
+                  onClick={(e) => handleServiceClick(e, service.id)}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {category.services.map((service, idx) => (
+                <ServiceListItem
+                  key={service.id}
+                  service={service}
+                  delay={categoryIdx * 50 + idx * 40}
+                  onClick={(e) => handleServiceClick(e, service.id)}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
     </section>
+  );
+};
+
+interface ServiceCardProps {
+  service: ServiceItem;
+  delay: number;
+  onClick: (e: React.MouseEvent) => void;
+}
+
+const ServiceCard = ({ service, delay, onClick }: ServiceCardProps) => {
+  const Icon = service.icon;
+  
+  return (
+    <Reveal delay={delay}>
+      <article className="h-full">
+        <Card 
+          className="group h-full cursor-pointer touch-manipulation transition-all hover:shadow-elegant focus-within:ring-2 focus-within:ring-primary"
+          onClick={onClick}
+          tabIndex={0}
+          role="button"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              onClick(e as any);
+            }
+          }}
+        >
+          <CardHeader className="pb-3">
+            <div className="flex items-start gap-3">
+              <div className="rounded-lg bg-primary/10 p-2">
+                <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+              </div>
+              <div className="flex-1">
+                <CardTitle className="text-base font-semibold leading-tight group-hover:text-primary sm:text-lg">
+                  {service.titleTemplate}
+                </CardTitle>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-3 pt-0">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {service.description}
+            </p>
+            <ul className="space-y-1.5 text-sm leading-relaxed text-muted-foreground">
+              {service.typicalWorks.map((work, idx) => (
+                <li key={idx} className="flex items-start">
+                  <span className="mr-2 mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-primary"></span>
+                  {work}
+                </li>
+              ))}
+            </ul>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="mt-3 w-full"
+              onClick={onClick}
+            >
+              Оставить заявку
+            </Button>
+            {service.seoMicro && (
+              <p className="mt-3 text-xs leading-relaxed text-muted-foreground/80">
+                {service.seoMicro}
+              </p>
+            )}
+          </CardContent>
+        </Card>
+      </article>
+    </Reveal>
+  );
+};
+
+interface ServiceListItemProps {
+  service: ServiceItem;
+  delay: number;
+  onClick: (e: React.MouseEvent) => void;
+}
+
+const ServiceListItem = ({ service, delay, onClick }: ServiceListItemProps) => {
+  const Icon = service.icon;
+  
+  return (
+    <Reveal delay={delay}>
+      <article
+        className="group flex cursor-pointer gap-4 rounded-lg border bg-card p-4 shadow-sm touch-manipulation transition-all hover:shadow-elegant focus-within:ring-2 focus-within:ring-primary sm:p-5"
+        onClick={onClick}
+        tabIndex={0}
+        role="button"
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onClick(e as any);
+          }
+        }}
+      >
+        <div className="rounded-lg bg-primary/10 p-2 self-start">
+          <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h4 className="text-base font-semibold leading-tight group-hover:text-primary sm:text-lg">
+            {service.titleTemplate}
+          </h4>
+          <p className="mt-1 text-sm leading-relaxed text-muted-foreground line-clamp-2">
+            {service.description}
+          </p>
+          <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
+            {service.typicalWorks.slice(0, 3).map((work, idx) => (
+              <span key={idx} className="flex items-center">
+                <span className="mr-1.5 h-1 w-1 rounded-full bg-primary"></span>
+                {work}
+              </span>
+            ))}
+          </div>
+        </div>
+        <Button 
+          variant="outline" 
+          size="sm"
+          className="hidden sm:flex self-center"
+          onClick={onClick}
+        >
+          Заказать
+        </Button>
+      </article>
+    </Reveal>
   );
 };

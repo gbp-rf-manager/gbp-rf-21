@@ -7,16 +7,32 @@ import { Process } from "@/sections/Process";
 import { About } from "@/sections/About";
 import { Contacts } from "@/sections/Contacts";
 import { Footer } from "@/components/site/Footer";
+import { ServiceLinks } from "@/components/site/ServiceLinks";
 import { useEffect, useMemo } from "react";
+import { servicesData } from "@/data/services-data";
 
 const Index = () => {
   const jsonLd = useMemo(() => {
     const url = typeof window !== 'undefined' ? window.location.origin : 'https://example.com';
+    
+    // Generate ItemList for all services
+    const allServices = servicesData.flatMap(category => 
+      category.services.map(service => ({
+        "@type": "Service" as const,
+        name: service.titleTemplate,
+        description: service.description,
+        provider: {
+          "@type": "LocalBusiness" as const,
+          name: "ProFixNow"
+        }
+      }))
+    );
+
     return {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       name: "ProFixNow",
-      description: "Профессиональный ремонт бытовой техники в Москве. Выезд за 30 минут, гарантия до 2 лет, бесплатная диагностика.",
+      description: "Профессиональный ремонт бытовой техники, электроники и домашние услуги в Москве. Выезд за 30 минут, гарантия до 2 лет, бесплатная диагностика.",
       image: `${url}/favicon.ico`,
       telephone: "+7 495 128 09 84",
       url,
@@ -41,34 +57,9 @@ const Index = () => {
         worstRating: "1"
       },
       hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Услуги по ремонту бытовой техники",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Ремонт стиральных машин",
-              description: "Профессиональный ремонт стиральных машин всех марок с гарантией"
-            }
-          },
-          {
-            "@type": "Offer", 
-            itemOffered: {
-              "@type": "Service",
-              name: "Ремонт холодильников",
-              description: "Качественный ремонт холодильников с выездом на дом"
-            }
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service", 
-              name: "Ремонт посудомоечных машин",
-              description: "Быстрый ремонт посудомоечных машин на дому"
-            }
-          }
-        ]
+        "@type": "ItemList",
+        name: "Список услуг",
+        itemListElement: allServices
       }
     }
   }, []);
@@ -86,6 +77,7 @@ const Index = () => {
         <Benefits />
         <Process />
         <About />
+        <ServiceLinks />
         <Contacts />
       </main>
       <Footer />
