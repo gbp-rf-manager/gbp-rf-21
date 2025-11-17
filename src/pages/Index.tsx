@@ -57,6 +57,11 @@ const Index = () => {
       <Header />
       <main role="main">
         <Hero />
+        <Services />
+        <Benefits />
+        <Process />
+        <About />
+        <ServiceLinks />
         {/* SEO:PFN:Article START */}
         <section className="section my-12 sm:my-16" data-test-id="pfn-article">
           <div className="rounded-2xl border bg-card/80 p-6 shadow-elegant backdrop-blur sm:p-8 lg:p-10">
@@ -205,11 +210,6 @@ const Index = () => {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(seoKeywords, null, 2) }}
         />
         {/* SEO:PFN:Keywords END */}
-        <Services />
-        <Benefits />
-        <Process />
-        <About />
-        <ServiceLinks />
         <Contacts />
       </main>
       <Footer />
