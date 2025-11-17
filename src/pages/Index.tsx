@@ -8,71 +8,113 @@ import { About } from "@/sections/About";
 import { Contacts } from "@/sections/Contacts";
 import { Footer } from "@/components/site/Footer";
 import { ServiceLinks } from "@/components/site/ServiceLinks";
-import { useEffect, useMemo } from "react";
-import { servicesData } from "@/data/services-data";
 
 const Index = () => {
-  const jsonLd = useMemo(() => {
-    const url = typeof window !== 'undefined' ? window.location.origin : 'https://example.com';
-    
-    // Generate ItemList for all services
-    const allServices = servicesData.flatMap(category => 
-      category.services.map(service => ({
-        "@type": "Service" as const,
-        name: service.titleTemplate,
-        description: service.description,
-        provider: {
-          "@type": "LocalBusiness" as const,
-          name: "ProFixNow"
-        }
-      }))
-    );
-
-    return {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      name: "ProFixNow",
-      description: "Профессиональный ремонт бытовой техники, электроники и домашние услуги в Москве. Выезд за 30 минут, гарантия до 2 лет, бесплатная диагностика.",
-      image: `${url}/favicon.ico`,
-      telephone: "+7 495 128 09 84",
-      url,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Широкая ул., 13А",
-        addressLocality: "Москва",
-        addressCountry: "RU"
-      },
-      areaServed: {
-        "@type": "City",
-        name: "Москва"
-      },
-      openingHours: "Mo-Su 08:00-22:00",
-      sameAs: [],
-      priceRange: "$$" as const,
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "150",
-        bestRating: "5",
-        worstRating: "1"
-      },
-      hasOfferCatalog: {
-        "@type": "ItemList",
-        name: "Список услуг",
-        itemListElement: allServices
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    // Single H1 is in Hero. Nothing else to do here.
-  }, []);
-
   return (
     <div className="will-change-auto">
       <Header />
       <main role="main">
         <Hero />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `
+<!-- SEO:PFN:Article START -->
+<section class="seo-article container" data-test-id="pfn-article">
+  <h1>Ремонт техники и услуги мастеров в Москве - ProFixNow</h1>
+
+  <p>ProFixNow - сервис ремонта бытовой техники и электроники в Москве. Выполняем диагностику и ремонт на дому или в мастерской, работаем с популярными моделями и узлами. На странице указаны бесплатная диагностика, быстрый выезд и гарантия до 2 лет.</p>
+  <p>Если техника не включается, появились ошибки, шум или течь - поможем выявить причину и вернуть устройство к работе. Для консультации и записи звоните: <a href="tel:+74951280984">+7 495 128-09-84</a>.</p>
+
+  <h2>Что мы ремонтируем</h2>
+
+  <h3>Бытовая техника</h3>
+  <ul>
+    <li><strong>Стиральная машина</strong> - не сливает/не отжимает, вибрация, течь, коды ошибок.</li>
+    <li><strong>Посудомоечная машина</strong> - не греет, плохо моет, остаётся вода.</li>
+    <li><strong>Сушильная машина</strong> - не сушит, перегрев, барабан не крутится.</li>
+    <li><strong>Холодильник</strong> - не морозит, иней, щелчки реле, шум.</li>
+    <li><strong>Кофемашина</strong> - нет подачи воды, ошибки, протечки.</li>
+    <li><strong>Электроплита</strong> - не греют конфорки, срабатывает защита.</li>
+    <li><strong>Варочная панель</strong> - не включается, сбои сенсора.</li>
+    <li><strong>Духовой шкаф</strong> - не набирает температуру, проблемы с ТЭН.</li>
+    <li><strong>Водонагреватель</strong> - не греет, течи, срабатывает защита.</li>
+    <li><strong>Подключение бытовой техники</strong> - установка, первичный пуск, проверка узлов.</li>
+  </ul>
+
+  <h3>Электроника</h3>
+  <ul>
+    <li><strong>Ноутбук / компьютер</strong> - перегрев, замена накопителей/ОЗУ, сбои загрузки.</li>
+    <li><strong>Телевизор / монитор</strong> - нет изображения/звука, артефакты, подсветка.</li>
+    <li><strong>Оргтехника</strong> - полосы, ошибки печати, захват бумаги.</li>
+    <li><strong>Пылесос</strong> - не включается, потеря тяги, перегрев.</li>
+    <li><strong>Apple (iPhone, iPad, MacBook, Watch)</strong> - базовые работы и диагностика.</li>
+    <li><strong>Dyson</strong> - обслуживание и восстановление работоспособности.</li>
+  </ul>
+
+  <h3>Услуги мастеров</h3>
+  <ul>
+    <li><strong>Ремонт квартир</strong> - мелкий и средний бытовой ремонт.</li>
+    <li><strong>Электрика</strong> - розетки, автоматы, свет, базовый монтаж.</li>
+    <li><strong>Сантехника</strong> - смесители, сифоны, устранение протечек.</li>
+    <li><strong>Окно</strong> - регулировка створок, уплотнители.</li>
+    <li><strong>Интернет на дачу</strong> - подбор решения, первичная настройка.</li>
+    <li><strong>Столярка</strong> - доработки мебели и дверей.</li>
+    <li><strong>Дезинсекция</strong> - обработка помещений.</li>
+    <li><strong>Химчистка</strong> - мягкая мебель, матрасы.</li>
+  </ul>
+
+  <h2>Как мы работаем</h2>
+  <ol>
+    <li><strong>Заявка.</strong> Звонок на <a href="tel:+74951280984">+7 495 128-09-84</a> - уточняем модель и симптомы.</li>
+    <li><strong>Диагностика.</strong> Проверяем узлы, подтверждаем неисправность; диагностика - бесплатная.</li>
+    <li><strong>Согласование.</strong> Объясняем причину поломки, сроки и стоимость работ/деталей.</li>
+    <li><strong>Ремонт.</strong> На дому или в мастерской - в зависимости от узла.</li>
+    <li><strong>Проверка.</strong> Тестирование под нагрузкой, рекомендации по эксплуатации.</li>
+    <li><strong>Гарантия.</strong> На выполненные работы - до 2 лет.</li>
+  </ol>
+
+  <h2>Цены и диагностика</h2>
+  <p>Стоимость формируется после диагностики: учитываем модель, узел, трудоёмкость, необходимость запчастей и возможный вывоз. До начала работ согласовываем прозрачную смету.</p>
+
+  <h2>Гарантия и запчасти</h2>
+  <p>Гарантия на выполненные работы - до 2 лет. Запчасти согласуются по наличию и стоимости, выдаётся чек и гарантийные отметки.</p>
+
+  <h2>Зоны обслуживания</h2>
+  <p>Работаем по Москве: выезд по городу, на странице указано «выезд за 30 минут».</p>
+
+  <h2>Почему выбирают нас</h2>
+  <ul>
+    <li><strong>Быстрый выезд по Москве</strong> - за 30 минут.</li>
+    <li><strong>Бесплатная диагностика</strong> - до согласования работ.</li>
+    <li><strong>Гарантия до 2 лет</strong> - на выполненные работы.</li>
+    <li><strong>Ремонт на дому</strong> - большинство типовых неисправностей без вывоза.</li>
+    <li><strong>Чёткая смета</strong> - фиксируем перечень работ и деталей до начала.</li>
+    <li><strong>Широкий профиль</strong> - бытовая техника, электроника и услуги мастеров.</li>
+  </ul>
+
+  <h2>Вопросы и ответы (FAQ)</h2>
+  <dl class="faq" data-test-id="pfn-faq">
+    <dt>Диагностика платная?</dt>
+    <dd>Диагностика - бесплатная.</dd>
+
+    <dt>Какая гарантия?</dt>
+    <dd>Гарантия на выполненные работы - до 2 лет.</dd>
+
+    <dt>Как быстро приедет мастер?</dt>
+    <dd>Заявлен выезд за 30 минут по Москве.</dd>
+
+    <dt>Как оставить заявку?</dt>
+    <dd>Позвоните по телефону +7 495 128-09-84.</dd>
+  </dl>
+
+  <h2>Заказать ремонт</h2>
+  <p>Позвоните: <a href="tel:+74951280984"><strong>+7 495 128-09-84</strong></a> - ProFixNow. Быстрый выезд по Москве, бесплатная диагностика, гарантия на работы.</p>
+  <p><a class="btn btn-primary" href="tel:+74951280984">Оставить заявку</a></p>
+</section>
+<!-- SEO:PFN:Article END -->
+            `,
+          }}
+        />
         <Services />
         <Benefits />
         <Process />
@@ -82,7 +124,6 @@ const Index = () => {
       </main>
       <Footer />
       <FloatingCallButton />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </div>
   );
 };
