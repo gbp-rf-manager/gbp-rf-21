@@ -67,7 +67,7 @@ const Index = () => {
           <div className="rounded-2xl border bg-card/80 p-6 shadow-elegant backdrop-blur sm:p-8 lg:p-10">
             <div className="flex flex-col gap-8">
               <div className="space-y-3 lg:space-y-4">
-                <h1 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl">Ремонт техники и услуги мастеров в Москве - ProFixNow</h1>
+                <h2 className="text-3xl font-bold leading-tight text-foreground sm:text-4xl">Ремонт техники и услуги мастеров в Москве - ProFixNow</h2>
                 <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
                   ProFixNow - сервис ремонта бытовой техники и электроники в Москве. Выполняем диагностику и ремонт на дому или в мастерской, работаем с популярными моделями и узлами. На странице указаны бесплатная диагностика, быстрый выезд и гарантия до 2 лет.
                 </p>
@@ -81,9 +81,9 @@ const Index = () => {
 
               <div className="grid gap-8 lg:grid-cols-2">
                 <div className="space-y-4">
-                  <h2 className="text-xl font-semibold text-foreground sm:text-2xl">Что мы ремонтируем</h2>
+                  <h3 className="text-xl font-semibold text-foreground sm:text-2xl">Что мы ремонтируем</h3>
                   <div className="space-y-4 rounded-xl border bg-background/60 p-4 sm:p-5">
-                    <h3 className="text-lg font-semibold text-foreground">Бытовая техника</h3>
+                    <h4 className="text-lg font-semibold text-foreground">Бытовая техника</h4>
                     <ul className="grid gap-2 text-muted-foreground">
                       <li><strong className="text-foreground">Стиральная машина</strong> - не сливает/не отжимает, вибрация, течь, коды ошибок.</li>
                       <li><strong className="text-foreground">Посудомоечная машина</strong> - не греет, плохо моет, остаётся вода.</li>
@@ -99,7 +99,7 @@ const Index = () => {
                   </div>
 
                   <div className="space-y-4 rounded-xl border bg-background/60 p-4 sm:p-5">
-                    <h3 className="text-lg font-semibold text-foreground">Электроника</h3>
+                    <h4 className="text-lg font-semibold text-foreground">Электроника</h4>
                     <ul className="grid gap-2 text-muted-foreground">
                       <li><strong className="text-foreground">Ноутбук / компьютер</strong> - перегрев, замена накопителей/ОЗУ, сбои загрузки.</li>
                       <li><strong className="text-foreground">Телевизор / монитор</strong> - нет изображения/звука, артефакты, подсветка.</li>
@@ -125,7 +125,7 @@ const Index = () => {
                   </ul>
 
                   <div className="space-y-3 rounded-xl border bg-background/60 p-4 sm:p-5">
-                    <h2 className="text-xl font-semibold text-foreground sm:text-2xl">Как мы работаем</h2>
+                    <h3 className="text-xl font-semibold text-foreground sm:text-2xl">Как мы работаем</h3>
                     <ol className="space-y-2 text-muted-foreground">
                       <li><strong className="text-foreground">Заявка.</strong> Звонок на <a className="font-semibold text-primary underline-offset-4 hover:underline" href="tel:+74951280984">+7 495 128-09-84</a> - уточняем модель и симптомы.</li>
                       <li><strong className="text-foreground">Диагностика.</strong> Проверяем узлы, подтверждаем неисправность; диагностика - бесплатная.</li>
@@ -137,16 +137,16 @@ const Index = () => {
                   </div>
 
                   <div className="grid gap-4 rounded-xl border bg-background/60 p-4 sm:p-5">
-                    <h2 className="text-xl font-semibold text-foreground sm:text-2xl">Цены и диагностика</h2>
+                    <h3 className="text-xl font-semibold text-foreground sm:text-2xl">Цены и диагностика</h3>
                     <p className="text-muted-foreground">Стоимость формируется после диагностики: учитываем модель, узел, трудоёмкость, необходимость запчастей и возможный вывоз. До начала работ согласовываем прозрачную смету.</p>
-                    <h2 className="text-xl font-semibold text-foreground sm:text-2xl">Гарантия и запчасти</h2>
+                    <h3 className="text-xl font-semibold text-foreground sm:text-2xl">Гарантия и запчасти</h3>
                     <p className="text-muted-foreground">Гарантия на выполненные работы - до 2 лет. Запчасти согласуются по наличию и стоимости, выдаётся чек и гарантийные отметки.</p>
-                    <h2 className="text-xl font-semibold text-foreground sm:text-2xl">Зоны обслуживания</h2>
+                    <h3 className="text-xl font-semibold text-foreground sm:text-2xl">Зоны обслуживания</h3>
                     <p className="text-muted-foreground">Работаем по Москве: выезд по городу, на странице указано «выезд за 30 минут».</p>
                   </div>
 
                   <div className="space-y-3 rounded-xl border bg-background/60 p-4 sm:p-5">
-                    <h2 className="text-xl font-semibold text-foreground sm:text-2xl">Почему выбирают нас</h2>
+                    <h3 className="text-xl font-semibold text-foreground sm:text-2xl">Почему выбирают нас</h3>
                     <ul className="grid gap-2 text-muted-foreground">
                       <li><strong className="text-foreground">Быстрый выезд по Москве</strong> - за 30 минут.</li>
                       <li><strong className="text-foreground">Бесплатная диагностика</strong> - до согласования работ.</li>
@@ -161,7 +161,7 @@ const Index = () => {
 
               <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
                 <div className="space-y-4 rounded-xl border bg-background/60 p-4 sm:p-5">
-                  <h2 className="text-xl font-semibold text-foreground sm:text-2xl">Вопросы и ответы (FAQ)</h2>
+                  <h3 className="text-xl font-semibold text-foreground sm:text-2xl">Вопросы и ответы (FAQ)</h3>
                   <dl className="grid gap-3 text-muted-foreground" data-test-id="pfn-faq">
                     <div className="rounded-lg bg-card/60 p-3">
                       <dt className="font-semibold text-foreground">Диагностика платная?</dt>
@@ -183,7 +183,7 @@ const Index = () => {
                 </div>
 
                 <div className="space-y-4 rounded-xl border bg-background/60 p-4 sm:p-5">
-                  <h2 className="text-xl font-semibold text-foreground sm:text-2xl">Заказать ремонт</h2>
+                  <h3 className="text-xl font-semibold text-foreground sm:text-2xl">Заказать ремонт</h3>
                   <p className="text-muted-foreground">
                     Позвоните:{" "}
                     <a className="font-semibold text-primary underline-offset-4 hover:underline" href="tel:+74951280984">
