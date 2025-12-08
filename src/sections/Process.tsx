@@ -12,10 +12,10 @@ export const Process = () => {
     <section className="section py-10 sm:py-14 md:py-16">
       <header>
         <Reveal>
-          <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">Как мы работаем</h2>
+          <h2 className="section-title">Как мы работаем</h2>
         </Reveal>
         <Reveal delay={60}>
-          <p className="mt-2 text-muted-foreground sm:mt-3">Простой и понятный процесс от звонка до готового результата</p>
+          <p className="section-subtitle">Простой и понятный процесс от звонка до готового результата</p>
         </Reveal>
       </header>
       <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">

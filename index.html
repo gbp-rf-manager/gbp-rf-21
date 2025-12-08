@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
@@ -17,6 +17,12 @@
     <meta property="og:description" content="Ремонт техники и электроники в Москве - бесплатная диагностика, быстрый выезд, гарантия до 2 лет. Тел.: +7 495 128-09-84.">
     <meta property="og:url" content="https://profix-now.ru/">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1582719478250-3f40ffec2103?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image:alt" content="ProFixNow — сервис ремонта техники в Москве">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ремонт бытовой техники в Москве - ProFixNow">
+    <meta name="twitter:description" content="ProFixNow ремонтирует бытовую технику, электронику и домашние системы в Москве. Быстрый выезд и гарантия до 2 лет.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1582719478250-3f40ffec2103?auto=format&fit=crop&w=1200&q=80">
     <!-- SEO:PFN:Meta END -->
 
     <!-- SEO:PFN:JSONLD START -->
@@ -29,6 +35,7 @@
       "name": "ProFixNow",
       "url": "https://profix-now.ru/",
       "telephone": "+7-495-128-09-84",
+      "image": "https://images.unsplash.com/photo-1582719478250-3f40ffec2103?auto=format&fit=crop&w=1200&q=80",
       "areaServed": "Москва"
     },
     {
@@ -36,6 +43,14 @@
       "name": "ProFixNow",
       "url": "https://profix-now.ru/",
       "telephone": "+7-495-128-09-84",
+      "image": "https://images.unsplash.com/photo-1582719478250-3f40ffec2103?auto=format&fit=crop&w=1200&q=80",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Широкая ул., 13А",
+        "addressLocality": "Москва",
+        "addressCountry": "RU"
+      },
+      "openingHours": "Mo-Su 08:00-22:00",
       "areaServed": "Москва"
     },
     {
@@ -66,7 +81,18 @@
         "url": "https://profix-now.ru/",
         "telephone": "+7-495-128-09-84"
       },
-      "areaServed": "Москва"
+      "areaServed": "Москва",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Услуги ProFixNow",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт стиральных машин" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт холодильников" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт посудомоечных машин" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт варочных панелей и духовок" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Сантехнические и электротехнические работы" } }
+        ]
+      }
     },
     {
       "@type": "FAQPage",
@@ -83,7 +109,7 @@
     <!-- SEO:PFN:JSONLD END -->
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="/src/assets/hero-profixnow.jpg" as="image" type="image/jpeg" />
+    <!-- hero изображение подгружается в рантайме -->
     <link rel="modulepreload" href="/src/main.tsx" />
     
     <!-- DNS prefetch and font optimization -->

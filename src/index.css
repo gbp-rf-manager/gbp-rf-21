@@ -148,6 +148,9 @@
   .shadow-elegant { box-shadow: var(--shadow-elegant); }
   .shadow-glow { box-shadow: var(--shadow-glow); }
   .section { @apply container mx-auto px-4 sm:px-6 lg:px-8; }
+  .section-title { @apply text-2xl font-semibold leading-tight text-foreground sm:text-3xl; }
+  .section-subtitle { @apply mt-2 text-base leading-relaxed text-muted-foreground sm:mt-3; }
+  .section-prose { @apply text-base leading-relaxed text-muted-foreground; }
   
   /* Touch-friendly targets */
   .touch-manipulation { 

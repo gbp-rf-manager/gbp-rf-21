@@ -1,4 +1,3 @@
-import heroImg from "@/assets/hero-profixnow.jpg";
 import { Button } from "@/components/ui/button";
 import { Phone, ShieldCheck, Truck, Wrench } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
@@ -10,7 +9,9 @@ const telHref = "tel:+74951280984";
 
 export const Hero = () => {
   const heroContent = useMemo(() => getHeroContent(), []);
-  
+  const heroImg =
+    "https://images.unsplash.com/photo-1582719478250-3f40ffec2103?auto=format&fit=crop&w=1280&q=80";
+
   return (
     <section id="top" className="section relative grid grid-cols-1 items-center gap-6 py-8 sm:gap-8 sm:py-12 md:py-16 lg:grid-cols-2 lg:gap-12 lg:py-20">
       <div>
@@ -53,12 +54,13 @@ export const Hero = () => {
         <div className="relative overflow-hidden rounded-xl shadow-elegant">
           <img 
             src={heroImg} 
-            alt="Профессиональный мастер ProFixNow выполняет ремонт стиральной машины в Москве с использованием современного оборудования и оригинальных запчастей" 
+            alt="Славянский мастер ProFixNow проверяет стиральную машину у клиента в Москве" 
             className="aspect-[4/3] h-full w-full object-cover sm:aspect-[3/2] lg:aspect-[4/3]" 
             loading="eager"
             fetchPriority="high"
             width="600"
             height="450"
+            data-image-prompt="Реалистичное фото славянского мастера в бежевой рабочей форме, который в современной квартире проверяет стиральную машину клиента. Тёплый свет, доверительная сцена."
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-background/0 to-background/10" />
         </div>

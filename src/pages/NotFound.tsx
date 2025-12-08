@@ -1,8 +1,14 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { usePageSeo } from "@/hooks/usePageSeo";
 
 const NotFound = () => {
   const location = useLocation();
+
+  usePageSeo({
+    title: "Страница не найдена — ProFixNow",
+    description: "Запрошенная страница не существует. Вернитесь на главную ProFixNow.",
+  });
 
   useEffect(() => {
     console.error(

@@ -10,10 +10,10 @@ export const Contacts = () => {
     <section id="contacts" className="section scroll-mt-24 py-10 sm:py-14 md:py-16">
       <header>
         <Reveal>
-          <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">Контакты</h2>
+          <h2 className="section-title">Контакты</h2>
         </Reveal>
         <Reveal delay={60}>
-          <p className="mt-2 text-muted-foreground sm:mt-3">Свяжитесь с нами удобным способом — работаем круглосуточно</p>
+          <p className="section-subtitle">Свяжитесь с нами удобным способом — работаем круглосуточно</p>
         </Reveal>
       </header>
       <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:gap-6 md:grid-cols-3">

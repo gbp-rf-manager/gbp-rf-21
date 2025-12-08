@@ -13,6 +13,7 @@ export interface ServiceItem {
   typicalWorks: string[];
   icon: LucideIcon;
   seoMicro?: string;
+  pageSlug?: string;
 }
 
 export interface ServiceCategory {
@@ -44,7 +45,8 @@ export const servicesData: ServiceCategory[] = [
           "Ремонт модуля управления"
         ],
         icon: Wrench,
-        seoMicro: `Ремонт стиральных машин в ${city}: не сливает, не отжимает, течь, вибрации — выезд мастера и диагностика у клиента без указания стоимости на сайте.`
+        seoMicro: `Ремонт стиральных машин в ${city}: не сливает, не отжимает, течь, вибрации — выезд мастера и диагностика у клиента без указания стоимости на сайте.`,
+        pageSlug: "/remont-stiralnyh-mashin",
       },
       {
         id: "dishwasher",
@@ -58,7 +60,8 @@ export const servicesData: ServiceCategory[] = [
           "Замена циркуляционного насоса",
           "Чистка фильтров и форсунок"
         ],
-        icon: Droplets
+        icon: Droplets,
+        pageSlug: "/remont-posudomoechnyh-mashin",
       },
       {
         id: "dryer",
@@ -87,7 +90,8 @@ export const servicesData: ServiceCategory[] = [
           "Замена термостата"
         ],
         icon: Refrigerator,
-        seoMicro: `Ремонт холодильников в ${city}: не морозит, течёт, шумит — заправка фреона, замена компрессора, настройка No Frost с выездом на дом.`
+        seoMicro: `Ремонт холодильников в ${city}: не морозит, течёт, шумит — заправка фреона, замена компрессора, настройка No Frost с выездом на дом.`,
+        pageSlug: "/remont-holodilnikov",
       },
       {
         id: "coffee-machine",
@@ -101,7 +105,8 @@ export const servicesData: ServiceCategory[] = [
           "Декальцинация и чистка",
           "Замена помпы"
         ],
-        icon: Coffee
+        icon: Coffee,
+        pageSlug: "/remont-kofemashin",
       },
       {
         id: "electric-stove",
@@ -115,7 +120,8 @@ export const servicesData: ServiceCategory[] = [
           "Замена нагревательных элементов",
           "Ремонт сенсорной панели"
         ],
-        icon: Zap
+        icon: Zap,
+        pageSlug: "/remont-varochnyh-paneley-duxovyh-shkafov-elektroplit",
       },
       {
         id: "cooktop",
@@ -129,7 +135,8 @@ export const servicesData: ServiceCategory[] = [
           "Замена сенсорного управления",
           "Ремонт индукционного блока"
         ],
-        icon: CircuitBoard
+        icon: CircuitBoard,
+        pageSlug: "/remont-varochnyh-paneley-duxovyh-shkafov-elektroplit",
       },
       {
         id: "oven",
@@ -143,7 +150,8 @@ export const servicesData: ServiceCategory[] = [
           "Замена ТЭНа",
           "Ремонт термостата"
         ],
-        icon: Sparkles
+        icon: Sparkles,
+        pageSlug: "/remont-varochnyh-paneley-duxovyh-shkafov-elektroplit",
       },
       {
         id: "water-heater",
@@ -193,7 +201,8 @@ export const servicesData: ServiceCategory[] = [
           "Чистка системы охлаждения"
         ],
         icon: Laptop,
-        seoMicro: `Ремонт ноутбуков в ${city}: не включается, перегрев, разбит экран, замена комплектующих — диагностика и восстановление на дому или в сервисе.`
+        seoMicro: `Ремонт ноутбуков в ${city}: не включается, перегрев, разбит экран, замена комплектующих — диагностика и восстановление на дому или в сервисе.`,
+        pageSlug: "/remont-pk-noutbukov",
       },
       {
         id: "computer",
@@ -207,7 +216,8 @@ export const servicesData: ServiceCategory[] = [
           "Замена видеокарты, процессора",
           "Установка Windows"
         ],
-        icon: Computer
+        icon: Computer,
+        pageSlug: "/remont-pk-noutbukov",
       },
       {
         id: "tv",
@@ -221,7 +231,8 @@ export const servicesData: ServiceCategory[] = [
           "Замена блока питания",
           "Ремонт материнской платы"
         ],
-        icon: Tv
+        icon: Tv,
+        pageSlug: "/remont-televizorov",
       },
       {
         id: "monitor",
@@ -277,7 +288,8 @@ export const servicesData: ServiceCategory[] = [
           "Замена батареи",
           "Восстановление после воды"
         ],
-        icon: Laptop
+        icon: Laptop,
+        pageSlug: "/remont-apple",
       },
       {
         id: "dyson",
@@ -312,7 +324,8 @@ export const servicesData: ServiceCategory[] = [
           "Покраска стен",
           "Монтаж потолков"
         ],
-        icon: Home
+        icon: Home,
+        pageSlug: "/remont-kvartir",
       },
       {
         id: "electrician",
@@ -327,7 +340,8 @@ export const servicesData: ServiceCategory[] = [
           "Поиск неисправностей"
         ],
         icon: Zap,
-        seoMicro: `Услуги электрика в ${city}: замена проводки, установка розеток, подключение техники — вызов мастера на дом для решения любых электрических задач.`
+        seoMicro: `Услуги электрика в ${city}: замена проводки, установка розеток, подключение техники — вызов мастера на дом для решения любых электрических задач.`,
+        pageSlug: "/remont-elektriki",
       },
       {
         id: "plumbing",
@@ -341,7 +355,8 @@ export const servicesData: ServiceCategory[] = [
           "Прочистка труб",
           "Монтаж водопровода"
         ],
-        icon: Droplets
+        icon: Droplets,
+        pageSlug: "/remont-santehniki",
       },
       {
         id: "windows",
