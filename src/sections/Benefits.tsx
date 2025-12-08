@@ -10,10 +10,10 @@ export const Benefits = () => {
       <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12">
         <div>
           <Reveal>
-            <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">Почему ProFixNow</h2>
+            <h2 className="section-title">Почему ProFixNow</h2>
           </Reveal>
           <Reveal delay={80}>
-            <p className="mt-3 max-w-prose text-base leading-relaxed text-muted-foreground sm:mt-4">
+            <p className="section-subtitle max-w-prose">
               Работаем в Москве с 2008 года. Ставим качество и честность выше всего: используем оригинальные запчасти и даём расширенную гарантию на выполненные работы.
             </p>
           </Reveal>

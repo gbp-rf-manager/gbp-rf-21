@@ -8,6 +8,7 @@ import { About } from "@/sections/About";
 import { Contacts } from "@/sections/Contacts";
 import { Footer } from "@/components/site/Footer";
 import { ServiceLinks } from "@/components/site/ServiceLinks";
+import { usePageSeo } from "@/hooks/usePageSeo";
 
 const Index = () => {
   const seoKeywords = {
@@ -51,6 +52,14 @@ const Index = () => {
       "ремонт бытовых приборов",
     ],
   };
+
+  usePageSeo({
+    title: "Ремонт бытовой техники в Москве — ProFixNow",
+    description:
+      "ProFixNow: ремонт бытовой техники, электроники и домашних систем в Москве. Быстрый выезд, бесплатная диагностика и гарантия до 2 лет.",
+    keywords: [seoKeywords.primary, ...seoKeywords.secondary],
+    canonical: "https://profix-now.ru/",
+  });
 
   return (
     <div className="will-change-auto">
