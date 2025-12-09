@@ -19,9 +19,17 @@ export interface ServicePageContent {
 
 const baseUrl = "https://profix-now.ru";
 
-const masterLaundryImg = "https://images.unsplash.com/photo-1582719478191-7e087d8c7e63?auto=format&fit=crop&w=1200&q=80";
-const masterKitchenImg = "https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8?auto=format&fit=crop&w=1200&q=80";
-const masterWorkshopImg = "https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=1200&q=80";
+const masterLaundryImg = "https://images.unsplash.com/photo-1582719478191-7e087d8c7e63?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
+const masterFridgeImg = "https://images.unsplash.com/photo-1582719478258-2c10ce66e1d5?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
+const masterCoffeeImg = "https://images.unsplash.com/photo-1582719478215-6a3f17fdcbcd?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
+const masterDishwasherImg = "https://images.unsplash.com/photo-1582719478239-e4d34a2a1c4c?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
+const masterCooktopImg = "https://images.unsplash.com/photo-1582719478260-730e58c44237?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
+const masterLaptopImg = "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
+const masterTVImg = "https://images.unsplash.com/photo-1580894908352-849264e72f7e?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
+const masterAppleImg = "https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
+const masterApartmentImg = "https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
+const masterPlumbingImg = "https://images.unsplash.com/photo-1614369779055-31c8b3f8d403?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
+const masterElectricImg = "https://images.unsplash.com/photo-1567446549031-2c679e6e7806?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
 
 const buildSteps = (service: string): { title: string; desc: string }[] => [
   { title: "Заявка", desc: `Принимаем заявку по телефону, уточняем симптомы ${service} и удобное время визита в Москве.` },
@@ -113,7 +121,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт холодильников и морозильных камер в Москве: утечки, No Frost, компрессор, быстрая диагностика и выезд мастера ProFixNow.",
     h1: "Ремонт холодильников в Москве",
     heroImage: {
-      src: masterKitchenImg,
+      src: masterFridgeImg,
       alt: "Мастер по ремонту холодильника в Москве",
     },
     intro: [
@@ -158,7 +166,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Профессиональный ремонт кофемашин в Москве: чистка гидросистемы, помпы, нагрев, настройка, выезд мастера ProFixNow.",
     h1: "Ремонт кофемашин в Москве",
     heroImage: {
-      src: masterKitchenImg,
+      src: masterCoffeeImg,
       alt: "Мастер по ремонту кофемашины в Москве",
     },
     intro: [
@@ -202,7 +210,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт посудомоечных машин в Москве: слив, нагрев, протечки, обслуживание насосов и фильтров. Выезд ProFixNow по городу.",
     h1: "Ремонт посудомоечных машин в Москве",
     heroImage: {
-      src: masterKitchenImg,
+      src: masterDishwasherImg,
       alt: "Мастер по ремонту посудомоечной машины в Москве",
     },
     intro: [
@@ -246,7 +254,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт варочных панелей, духовых шкафов и электроплит в Москве: нагревательные элементы, сенсоры, термостаты, быстрый выезд ProFixNow.",
     h1: "Ремонт варочных панелей, духовых шкафов и электроплит в Москве",
     heroImage: {
-      src: masterKitchenImg,
+      src: masterCooktopImg,
       alt: "Мастер по ремонту варочной панели и духового шкафа в Москве",
     },
     intro: [
@@ -290,7 +298,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт ноутбуков и компьютеров в Москве: перегрев, замена комплектующих, настройка ПО, чистка и диагностика у клиента.",
     h1: "Ремонт ПК и ноутбуков в Москве",
     heroImage: {
-      src: masterWorkshopImg,
+      src: masterLaptopImg,
       alt: "Мастер по ремонту ноутбука в Москве",
     },
     intro: [
@@ -334,7 +342,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт телевизоров в Москве: подсветка, материнская плата, блок питания, настройка изображения. Выезд мастера ProFixNow.",
     h1: "Ремонт телевизоров в Москве",
     heroImage: {
-      src: masterWorkshopImg,
+      src: masterTVImg,
       alt: "Мастер по ремонту телевизора в Москве",
     },
     intro: [
@@ -378,7 +386,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт Apple в Москве: MacBook, iPhone, iPad, Watch — диагностика, замена модулей, восстановление после влаги. Выезд мастера ProFixNow.",
     h1: "Ремонт техники Apple в Москве",
     heroImage: {
-      src: masterWorkshopImg,
+      src: masterAppleImg,
       alt: "Мастер по ремонту техники Apple в Москве",
     },
     intro: [
@@ -422,7 +430,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт квартир в Москве: мелкий и средний ремонт, отделка, подготовка под сдачу, аккуратные мастера ProFixNow.",
     h1: "Ремонт квартир в Москве",
     heroImage: {
-      src: masterKitchenImg,
+      src: masterApartmentImg,
       alt: "Мастер по ремонту квартир в Москве",
     },
     intro: [
@@ -466,7 +474,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Сантехнические работы в Москве: устранение протечек, замена смесителей, установка сантехприборов, выезд мастера ProFixNow.",
     h1: "Ремонт сантехники в Москве",
     heroImage: {
-      src: masterKitchenImg,
+      src: masterPlumbingImg,
       alt: "Мастер по ремонту сантехники в Москве",
     },
     intro: [
@@ -510,7 +518,7 @@ export const servicePages: ServicePageContent[] = [
     description: "Электрика в Москве: установка розеток и выключателей, щитки, освещение, поиск неисправностей. Выезд мастера ProFixNow.",
     h1: "Электрика в Москве",
     heroImage: {
-      src: masterWorkshopImg,
+      src: masterElectricImg,
       alt: "Мастер-электрик в Москве",
     },
     intro: [
