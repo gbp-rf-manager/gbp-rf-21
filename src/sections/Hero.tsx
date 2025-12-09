@@ -53,16 +53,18 @@ export const Hero = () => {
       </div>
       <Reveal className="relative">
         <div className="relative overflow-hidden rounded-xl shadow-elegant">
+          {/* React требует fetchpriority в нижнем регистре */}
           <SafeImage 
             src={heroImg} 
             fallback={heroImgFallback}
             alt="Славянский мастер ProFixNow выполняет ремонт стиральной машины в Москве" 
             className="aspect-[4/3] h-full w-full object-cover sm:aspect-[3/2] lg:aspect-[4/3]" 
             loading="eager"
-            fetchPriority="high"
             referrerPolicy="no-referrer"
             width="600"
             height="450"
+            // @ts-expect-error fetchpriority поддерживается браузером, но не в типах React
+            fetchpriority="high"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-background/0 to-background/10" />
         </div>
