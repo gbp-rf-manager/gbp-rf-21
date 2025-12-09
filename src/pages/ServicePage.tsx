@@ -113,19 +113,13 @@ export const ServicePage = ({ slug }: ServicePageProps) => {
             </div>
             <Reveal className="relative">
               <div className="relative overflow-hidden rounded-xl border bg-card shadow-elegant">
-                {/* React требует fetchpriority в нижнем регистре */}
-                <SafeImage
+                <img
                   src={page.heroImage.src}
-                  fallback={page.heroImage.fallback}
                   alt={page.heroImage.alt}
                   className="aspect-[4/3] h-full w-full object-cover sm:aspect-[3/2] lg:aspect-[4/3]"
                   loading="eager"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
                   width="900"
                   height="675"
-                  // @ts-expect-error fetchpriority поддерживается браузером, но не в типах React
-                  fetchpriority="high"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-background/0 to-background/10" />
               </div>

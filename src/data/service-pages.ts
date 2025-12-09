@@ -1,3 +1,16 @@
+// Импортируем локальные изображения
+import serviceWashingMachine from "@/assets/service-washing-machine.jpg";
+import serviceFridge from "@/assets/service-fridge.jpg";
+import serviceCoffee from "@/assets/service-coffee.jpg";
+import serviceDishwasher from "@/assets/service-dishwasher.jpg";
+import serviceCooktop from "@/assets/service-cooktop.jpg";
+import serviceLaptop from "@/assets/service-laptop.jpg";
+import serviceTV from "@/assets/service-tv.jpg";
+import serviceApple from "@/assets/service-apple.jpg";
+import serviceApartment from "@/assets/service-apartment.jpg";
+import servicePlumbing from "@/assets/service-plumbing.jpg";
+import serviceElectric from "@/assets/service-electric.jpg";
+
 export interface ServicePageContent {
   slug: string;
   title: string;
@@ -6,7 +19,6 @@ export interface ServicePageContent {
   heroImage: {
     src: string;
     alt: string;
-    fallback: string;
   };
   intro: string[];
   subtypes: string[];
@@ -18,32 +30,7 @@ export interface ServicePageContent {
   cta: string;
 }
 
-const baseUrl = "https://profix-now.ru";
-
-const cdnBase = "https://profix-now.ru/images";
-
-const masterLaundryImg = `${cdnBase}/service-wm.jpg`;
-const masterLaundryFallback = "https://images.unsplash.com/photo-1582719478191-7e087d8c7e63?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterFridgeImg = `${cdnBase}/service-fridge.jpg`;
-const masterFridgeFallback = "https://images.unsplash.com/photo-1582719478258-2c10ce66e1d5?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterCoffeeImg = `${cdnBase}/service-coffee.jpg`;
-const masterCoffeeFallback = "https://images.unsplash.com/photo-1582719478215-6a3f17fdcbcd?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterDishwasherImg = `${cdnBase}/service-dishwasher.jpg`;
-const masterDishwasherFallback = "https://images.unsplash.com/photo-1582719478239-e4d34a2a1c4c?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterCooktopImg = `${cdnBase}/service-cooktop.jpg`;
-const masterCooktopFallback = "https://images.unsplash.com/photo-1582719478260-730e58c44237?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterLaptopImg = `${cdnBase}/service-laptop.jpg`;
-const masterLaptopFallback = "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterTVImg = `${cdnBase}/service-tv.jpg`;
-const masterTVFallback = "https://images.unsplash.com/photo-1580894908352-849264e72f7e?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterAppleImg = `${cdnBase}/service-apple.jpg`;
-const masterAppleFallback = "https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterApartmentImg = `${cdnBase}/service-apartment.jpg`;
-const masterApartmentFallback = "https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterPlumbingImg = `${cdnBase}/service-plumbing.jpg`;
-const masterPlumbingFallback = "https://images.unsplash.com/photo-1614369779055-31c8b3f8d403?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterElectricImg = `${cdnBase}/service-electric.jpg`;
-const masterElectricFallback = "https://images.unsplash.com/photo-1567446549031-2c679e6e7806?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
+export const baseUrl = "https://profix-now.ru";
 
 const buildSteps = (service: string): { title: string; desc: string }[] => [
   { title: "Заявка", desc: `Принимаем заявку по телефону, уточняем симптомы ${service} и удобное время визита в Москве.` },
@@ -89,9 +76,8 @@ export const servicePages: ServicePageContent[] = [
     description: "Профессиональный ремонт стиральных машин в Москве: диагностика, восстановление узлов, бережный выезд мастера ProFixNow.",
     h1: "Ремонт стиральных машин в Москве",
     heroImage: {
-      src: masterLaundryImg,
+      src: serviceWashingMachine,
       alt: "Мастер по ремонту стиральных машин в Москве",
-      fallback: masterLaundryFallback,
     },
     intro: [
       "ProFixNow восстанавливает стиральные машины в Москве на дому: помогаем при протечках, вибрациях, ошибках электроники и проблемах со сливом. Приезжаем со всем необходимым, аккуратно работаем в квартире и сразу проверяем результат на стирке/отжиме.",
@@ -136,9 +122,8 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт холодильников и морозильных камер в Москве: утечки, No Frost, компрессор, быстрая диагностика и выезд мастера ProFixNow.",
     h1: "Ремонт холодильников в Москве",
     heroImage: {
-      src: masterFridgeImg,
+      src: serviceFridge,
       alt: "Мастер по ремонту холодильника в Москве",
-      fallback: masterFridgeFallback,
     },
     intro: [
       "ProFixNow помогает, когда холодильник не морозит, шумит или даёт ошибку No Frost. Приезжаем по Москве, аккуратно работаем на кухне, проверяем температуру, герметичность контура и состояние компрессора. Не предлагаем лишнего — сначала выясняем причину, затем согласуем действия.",
@@ -182,9 +167,8 @@ export const servicePages: ServicePageContent[] = [
     description: "Профессиональный ремонт кофемашин в Москве: чистка гидросистемы, помпы, нагрев, настройка, выезд мастера ProFixNow.",
     h1: "Ремонт кофемашин в Москве",
     heroImage: {
-      src: masterCoffeeImg,
+      src: serviceCoffee,
       alt: "Мастер по ремонту кофемашины в Москве",
-      fallback: masterCoffeeFallback,
     },
     intro: [
       "Восстанавливаем кофемашины в Москве: автоматические, капсульные и рожковые модели. Чистим гидросистему, устраняем утечки, проверяем термоблок, помпу и датчики давления. Приезжаем с расходниками, чтобы вернуть аппарат к стабильной подаче напитка.",
@@ -227,9 +211,8 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт посудомоечных машин в Москве: слив, нагрев, протечки, обслуживание насосов и фильтров. Выезд ProFixNow по городу.",
     h1: "Ремонт посудомоечных машин в Москве",
     heroImage: {
-      src: masterDishwasherImg,
+      src: serviceDishwasher,
       alt: "Мастер по ремонту посудомоечной машины в Москве",
-      fallback: masterDishwasherFallback,
     },
     intro: [
       "Приводим в порядок посудомоечные машины в Москве: от очистки фильтров до ремонта электроники и насосов. Прибываем со всем необходимым, бережно снимаем фасад, чтобы сохранить кухонный гарнитур целым.",
@@ -272,9 +255,8 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт варочных панелей, духовых шкафов и электроплит в Москве: нагревательные элементы, сенсоры, термостаты, быстрый выезд ProFixNow.",
     h1: "Ремонт варочных панелей, духовых шкафов и электроплит в Москве",
     heroImage: {
-      src: masterCooktopImg,
+      src: serviceCooktop,
       alt: "Мастер по ремонту варочной панели и духового шкафа в Москве",
-      fallback: masterCooktopFallback,
     },
     intro: [
       "Восстанавливаем варочные панели, духовки и электроплиты в Москве. Работаем с индукционными, стеклокерамическими и классическими моделями, устраняем ошибки сенсоров, проблемы с нагревом и термостатами. Приезжаем с набором ТЭНов и модулей, чтобы закрыть типовые поломки за один визит.",
@@ -317,9 +299,8 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт ноутбуков и компьютеров в Москве: перегрев, замена комплектующих, настройка ПО, чистка и диагностика у клиента.",
     h1: "Ремонт ПК и ноутбуков в Москве",
     heroImage: {
-      src: masterLaptopImg,
+      src: serviceLaptop,
       alt: "Мастер по ремонту ноутбука в Москве",
-      fallback: masterLaptopFallback,
     },
     intro: [
       "Помогаем, когда ноутбук или компьютер греется, зависает или не включается. Чистим систему охлаждения, меняем термопасту, диагностируем материнскую плату и блок питания. При необходимости модернизируем: устанавливаем SSD, наращиваем память, настраиваем системы для работы и учёбы.",
@@ -362,9 +343,8 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт телевизоров в Москве: подсветка, материнская плата, блок питания, настройка изображения. Выезд мастера ProFixNow.",
     h1: "Ремонт телевизоров в Москве",
     heroImage: {
-      src: masterTVImg,
+      src: serviceTV,
       alt: "Мастер по ремонту телевизора в Москве",
-      fallback: masterTVFallback,
     },
     intro: [
       "Чиним телевизоры любых диагоналей: LED, OLED, QLED. Устраняем проблемы с подсветкой, звуком, материнской платой и блоком питания. Приезжаем в Москве, аккуратно работаем в квартире, защищаем мебель и экран от повреждений.",
@@ -407,9 +387,8 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт Apple в Москве: MacBook, iPhone, iPad, Watch — диагностика, замена модулей, восстановление после влаги. Выезд мастера ProFixNow.",
     h1: "Ремонт техники Apple в Москве",
     heroImage: {
-      src: masterAppleImg,
+      src: serviceApple,
       alt: "Мастер по ремонту техники Apple в Москве",
-      fallback: masterAppleFallback,
     },
     intro: [
       "Обслуживаем MacBook, iPhone, iPad и Apple Watch в Москве. Помогаем при повреждении экрана, быстрой разрядке, перегреве и отказах клавиатуры. Работаем аккуратно, учитывая особенности оригинальных комплектующих и защит.",
@@ -452,9 +431,8 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт квартир в Москве: мелкий и средний ремонт, отделка, подготовка под сдачу, аккуратные мастера ProFixNow.",
     h1: "Ремонт квартир в Москве",
     heroImage: {
-      src: masterApartmentImg,
+      src: serviceApartment,
       alt: "Мастер по ремонту квартир в Москве",
-      fallback: masterApartmentFallback,
     },
     intro: [
       "ProFixNow берётся за мелкий и средний ремонт квартир в Москве: освежаем отделку, устраняем бытовые неисправности, готовим жильё к сдаче или заселению. Работаем аккуратно, соблюдаем порядок, закрываем задачи по электрике и сантехнике, чтобы вам не пришлось звать разных подрядчиков.",
@@ -497,9 +475,8 @@ export const servicePages: ServicePageContent[] = [
     description: "Сантехнические работы в Москве: устранение протечек, замена смесителей, установка сантехприборов, выезд мастера ProFixNow.",
     h1: "Ремонт сантехники в Москве",
     heroImage: {
-      src: masterPlumbingImg,
+      src: servicePlumbing,
       alt: "Мастер по ремонту сантехники в Москве",
-      fallback: masterPlumbingFallback,
     },
     intro: [
       "Устраняем протечки, меняем смесители, подключаем унитазы и ванны, прочищаем трубы. Работаем по Москве, аккуратно перекрываем воду, защищаем отделку и меблировку. Проверяем состояние подводки и сифонов, чтобы предотвратить повторные проблемы.",
@@ -542,9 +519,8 @@ export const servicePages: ServicePageContent[] = [
     description: "Электрика в Москве: установка розеток и выключателей, щитки, освещение, поиск неисправностей. Выезд мастера ProFixNow.",
     h1: "Электрика в Москве",
     heroImage: {
-      src: masterElectricImg,
+      src: serviceElectric,
       alt: "Мастер-электрик в Москве",
-      fallback: masterElectricFallback,
     },
     intro: [
       "Выполняем электромонтажные работы в Москве: устанавливаем розетки и выключатели, подключаем технику, настраиваем щитки и освещение. Проверяем линии на нагрузку, чтобы техника работала без перегрузок и отключений.",
@@ -581,6 +557,4 @@ export const servicePages: ServicePageContent[] = [
     cta: "Если искрит розетка или выбивает автомат — оставьте заявку, проверим линию и безопасно восстановим электрику.",
   },
 ];
-
-export { baseUrl };
 
