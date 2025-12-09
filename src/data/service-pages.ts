@@ -19,17 +19,17 @@ export interface ServicePageContent {
 
 const baseUrl = "https://profix-now.ru";
 
-const masterLaundryImg = "https://images.unsplash.com/photo-1582719478191-7e087d8c7e63?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterFridgeImg = "https://images.unsplash.com/photo-1582719478258-2c10ce66e1d5?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterCoffeeImg = "https://images.unsplash.com/photo-1582719478215-6a3f17fdcbcd?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterDishwasherImg = "https://images.unsplash.com/photo-1582719478239-e4d34a2a1c4c?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterCooktopImg = "https://images.unsplash.com/photo-1582719478260-730e58c44237?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterLaptopImg = "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterTVImg = "https://images.unsplash.com/photo-1580894908352-849264e72f7e?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterAppleImg = "https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterApartmentImg = "https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterPlumbingImg = "https://images.unsplash.com/photo-1614369779055-31c8b3f8d403?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
-const masterElectricImg = "https://images.unsplash.com/photo-1567446549031-2c679e6e7806?auto=format&fit=crop&w=1400&q=85&fm=jpg&sat=-2";
+const masterLaundryImg = "/images/service-wm.jpg";
+const masterFridgeImg = "/images/service-fridge.jpg";
+const masterCoffeeImg = "/images/service-coffee.jpg";
+const masterDishwasherImg = "/images/service-dishwasher.jpg";
+const masterCooktopImg = "/images/service-cooktop.jpg";
+const masterLaptopImg = "/images/service-laptop.jpg";
+const masterTVImg = "/images/service-tv.jpg";
+const masterAppleImg = "/images/service-apple.jpg";
+const masterApartmentImg = "/images/service-apartment.jpg";
+const masterPlumbingImg = "/images/service-plumbing.jpg";
+const masterElectricImg = "/images/service-electric.jpg";
 
 const buildSteps = (service: string): { title: string; desc: string }[] => [
   { title: "Заявка", desc: `Принимаем заявку по телефону, уточняем симптомы ${service} и удобное время визита в Москве.` },

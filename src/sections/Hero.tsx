@@ -6,8 +6,7 @@ import { getHeroContent } from "@/lib/hero-content";
 
 const phone = "+7 495 128 09 84";
 const telHref = "tel:+74951280984";
-const heroImg =
-  "https://images.unsplash.com/photo-1582719478248-54e9f2b17ffe?auto=format&fit=crop&w=1200&q=80";
+const heroImg = "/images/hero-main.jpg";
 
 export const Hero = () => {
   const heroContent = useMemo(() => getHeroContent(), []);
