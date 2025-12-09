@@ -3,7 +3,7 @@ import { Phone, ShieldCheck, Truck, Wrench } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { useMemo } from "react";
 import { getHeroContent } from "@/lib/hero-content";
-import heroImg from "@/assets/hero-repair.jpg";
+import heroImg from "@/assets/hero-repair-v2.jpg";
 
 const phone = "+7 495 128 09 84";
 const telHref = "tel:+74951280984";

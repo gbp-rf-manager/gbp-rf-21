@@ -1,15 +1,15 @@
 // Импортируем локальные изображения
-import serviceWashingMachine from "@/assets/service-washing-machine.jpg";
-import serviceFridge from "@/assets/service-fridge.jpg";
-import serviceCoffee from "@/assets/service-coffee.jpg";
-import serviceDishwasher from "@/assets/service-dishwasher.jpg";
-import serviceCooktop from "@/assets/service-cooktop.jpg";
-import serviceLaptop from "@/assets/service-laptop.jpg";
-import serviceTV from "@/assets/service-tv.jpg";
-import serviceApple from "@/assets/service-apple.jpg";
-import serviceApartment from "@/assets/service-apartment.jpg";
-import servicePlumbing from "@/assets/service-plumbing.jpg";
-import serviceElectric from "@/assets/service-electric.jpg";
+import serviceWashingMachine from "@/assets/service-washing-machine-v2.jpg";
+import serviceFridge from "@/assets/service-fridge-v2.jpg";
+import serviceCoffee from "@/assets/service-coffee-v2.jpg";
+import serviceDishwasher from "@/assets/service-dishwasher-v2.jpg";
+import serviceCooktop from "@/assets/service-cooktop-v2.jpg";
+import serviceLaptop from "@/assets/service-laptop-v2.jpg";
+import serviceTV from "@/assets/service-tv-v2.jpg";
+import serviceApple from "@/assets/service-apple-v2.jpg";
+import serviceApartment from "@/assets/service-apartment-v2.jpg";
+import servicePlumbing from "@/assets/service-plumbing-v2.jpg";
+import serviceElectric from "@/assets/service-electric-v2.jpg";
 
 export interface ServicePageContent {
   slug: string;

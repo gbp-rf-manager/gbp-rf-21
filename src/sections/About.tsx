@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/Reveal";
-import teamIvan from "@/assets/team-master-ivan.jpg";
-import teamAnna from "@/assets/team-master-anna.jpg";
-import teamSergey from "@/assets/team-master-sergey.jpg";
+import teamIvan from "@/assets/team-master-ivan-v2.jpg";
+import teamAnna from "@/assets/team-master-anna-v2.jpg";
+import teamSergey from "@/assets/team-master-sergey-v2.jpg";
 
 const teamMembers = [
   { img: teamIvan, name: "Иван Петров", role: "Главный мастер", exp: "10+ лет опыта" },
