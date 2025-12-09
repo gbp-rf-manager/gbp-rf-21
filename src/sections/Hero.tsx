@@ -3,10 +3,12 @@ import { Phone, ShieldCheck, Truck, Wrench } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { useMemo } from "react";
 import { getHeroContent } from "@/lib/hero-content";
+import { SafeImage } from "@/components/SafeImage";
 
 const phone = "+7 495 128 09 84";
 const telHref = "tel:+74951280984";
 const heroImg = "https://profix-now.ru/images/hero-main.jpg";
+const heroImgFallback = "https://images.unsplash.com/photo-1582719478248-54e9f2b17ffe?auto=format&fit=crop&w=1200&q=85&fm=jpg";
 
 export const Hero = () => {
   const heroContent = useMemo(() => getHeroContent(), []);
@@ -51,8 +53,9 @@ export const Hero = () => {
       </div>
       <Reveal className="relative">
         <div className="relative overflow-hidden rounded-xl shadow-elegant">
-          <img 
+          <SafeImage 
             src={heroImg} 
+            fallback={heroImgFallback}
             alt="Славянский мастер ProFixNow выполняет ремонт стиральной машины в Москве" 
             className="aspect-[4/3] h-full w-full object-cover sm:aspect-[3/2] lg:aspect-[4/3]" 
             loading="eager"

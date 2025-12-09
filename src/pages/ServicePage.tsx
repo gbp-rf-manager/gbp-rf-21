@@ -8,6 +8,7 @@ import { baseUrl, servicePages } from "@/data/service-pages";
 import type { ServicePageContent } from "@/data/service-pages";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import NotFound from "./NotFound";
+import { SafeImage } from "@/components/SafeImage";
 
 const phone = "+7 495 128 09 84";
 const telHref = "tel:+74951280984";
@@ -112,8 +113,9 @@ export const ServicePage = ({ slug }: ServicePageProps) => {
             </div>
             <Reveal className="relative">
               <div className="relative overflow-hidden rounded-xl border bg-card shadow-elegant">
-                <img
+                <SafeImage
                   src={page.heroImage.src}
+                  fallback={page.heroImage.fallback}
                   alt={page.heroImage.alt}
                   className="aspect-[4/3] h-full w-full object-cover sm:aspect-[3/2] lg:aspect-[4/3]"
                   loading="eager"
