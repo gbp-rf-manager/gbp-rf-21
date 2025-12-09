@@ -58,7 +58,7 @@ const ServiceListItem = ({ service, delay }: ServiceListItemProps) => {
   return (
     <Reveal delay={delay}>
       <article
-        className="group flex cursor-pointer items-start gap-4 rounded-lg border bg-card p-4 shadow-sm touch-manipulation transition-all hover:shadow-elegant focus-within:ring-2 focus-within:ring-primary sm:items-center sm:p-5"
+        className="group flex flex-col cursor-pointer gap-4 rounded-lg border bg-card p-4 shadow-sm touch-manipulation transition-all hover:shadow-elegant focus-within:ring-2 focus-within:ring-primary sm:flex-row sm:items-center sm:p-5"
         onClick={handleCardClick}
         tabIndex={0}
         role="button"
@@ -72,14 +72,14 @@ const ServiceListItem = ({ service, delay }: ServiceListItemProps) => {
         <div className="rounded-lg bg-primary/10 p-2 self-start">
           <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
         </div>
-        <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0 space-y-2">
           <h4 className="text-base font-semibold leading-tight group-hover:text-primary sm:text-lg">
             {service.titleTemplate}
           </h4>
-          <p className="mt-1 text-sm leading-relaxed text-muted-foreground line-clamp-2">
+          <p className="text-sm leading-relaxed text-muted-foreground line-clamp-2">
             {service.description}
           </p>
-          <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
             {service.typicalWorks.slice(0, 3).map((work, idx) => (
               <span key={idx} className="flex items-center">
                 <span className="mr-1.5 h-1 w-1 rounded-full bg-primary"></span>
@@ -88,7 +88,7 @@ const ServiceListItem = ({ service, delay }: ServiceListItemProps) => {
             ))}
           </div>
         </div>
-        <div className="mt-auto flex w-full flex-col gap-2 self-stretch sm:w-auto sm:flex-row sm:items-center">
+        <div className="mt-2 flex w-full flex-col gap-2 self-stretch sm:mt-0 sm:w-auto sm:flex-row sm:items-center">
           {service.slug && (
             <Button
               asChild
