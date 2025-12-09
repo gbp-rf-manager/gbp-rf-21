@@ -5,7 +5,7 @@ import teamSergey from "@/assets/team-master-sergey-gen.webp";
 
 const teamMembers = [
   { img: teamIvan, name: "Иван Петров", role: "Главный мастер", exp: "10+ лет опыта" },
-  { img: teamAnna, name: "Анна Соколова", role: "Ведущий диагност", exp: "7+ лет опыта" },
+  { img: teamAnna, name: "Кирилл Соколов", role: "Ведущий диагност", exp: "7+ лет опыта" },
   { img: teamSergey, name: "Сергей Кузнецов", role: "Мастер-универсал", exp: "5+ лет опыта" },
 ];
 
