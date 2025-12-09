@@ -1,5 +1,13 @@
 import { Reveal } from "@/components/Reveal";
-import { SafeImage } from "@/components/SafeImage";
+import teamIvan from "@/assets/team-master-ivan.jpg";
+import teamAnna from "@/assets/team-master-anna.jpg";
+import teamSergey from "@/assets/team-master-sergey.jpg";
+
+const teamMembers = [
+  { img: teamIvan, name: "Иван Петров", role: "Главный мастер", exp: "10+ лет опыта" },
+  { img: teamAnna, name: "Анна Соколова", role: "Ведущий диагност", exp: "7+ лет опыта" },
+  { img: teamSergey, name: "Сергей Кузнецов", role: "Мастер-универсал", exp: "5+ лет опыта" },
+];
 
 export const About = () => {
   return (
@@ -15,20 +23,14 @@ export const About = () => {
         </Reveal>
       </header>
       <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-        {[
-          { img: "https://profix-now.ru/images/team-1.jpg", fallback: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80", name: "Иван Петров", role: "Главный мастер", exp: "10+ лет опыта" },
-          { img: "https://profix-now.ru/images/team-2.jpg", fallback: "https://images.unsplash.com/photo-1582719478185-2c1d93d35306?auto=format&fit=crop&w=900&q=80", name: "Анна Соколова", role: "Ведущий диагност", exp: "7+ лет опыта" },
-          { img: "https://profix-now.ru/images/team-3.jpg", fallback: "https://images.unsplash.com/photo-1582719478141-1a7fdc0c57ab?auto=format&fit=crop&w=900&q=80", name: "Сергей Кузнецов", role: "Мастер-универсал", exp: "5+ лет опыта" },
-        ].map((m, i) => (
+        {teamMembers.map((m, i) => (
           <Reveal key={m.name} delay={i * 80}>
             <article className="overflow-hidden rounded-lg border bg-card shadow-sm touch-manipulation">
-              <SafeImage 
+              <img 
                 src={m.img} 
-                fallback={m.fallback}
-                alt={`${m.name} — славянский ${m.role.toLowerCase()} ProFixNow, выполняющий ремонт бытовой техники в Москве с опытом ${m.exp.toLowerCase()}`} 
+                alt={`${m.name} — ${m.role.toLowerCase()} ProFixNow, ${m.exp.toLowerCase()}`} 
                 className="aspect-[4/3] w-full object-cover" 
                 loading="lazy" 
-                referrerPolicy="no-referrer"
                 width="300"
                 height="225"
               />
