@@ -1,6 +1,3 @@
-import team1 from "@/assets/team-master-1.jpg";
-import team2 from "@/assets/team-master-2.jpg";
-import team3 from "@/assets/team-master-3.jpg";
 import { Reveal } from "@/components/Reveal";
 
 export const About = () => {
@@ -18,15 +15,15 @@ export const About = () => {
       </header>
       <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
         {[
-          { img: team1, name: "Иван Петров", role: "Главный мастер", exp: "10+ лет опыта" },
-          { img: team2, name: "Анна Соколова", role: "Ведущий диагност", exp: "7+ лет опыта" },
-          { img: team3, name: "Сергей Кузнецов", role: "Мастер-универсал", exp: "5+ лет опыта" },
+          { img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80", name: "Иван Петров", role: "Главный мастер", exp: "10+ лет опыта" },
+          { img: "https://images.unsplash.com/photo-1582719478185-2c1d93d35306?auto=format&fit=crop&w=900&q=80", name: "Анна Соколова", role: "Ведущий диагност", exp: "7+ лет опыта" },
+          { img: "https://images.unsplash.com/photo-1582719478141-1a7fdc0c57ab?auto=format&fit=crop&w=900&q=80", name: "Сергей Кузнецов", role: "Мастер-универсал", exp: "5+ лет опыта" },
         ].map((m, i) => (
           <Reveal key={m.name} delay={i * 80}>
             <article className="overflow-hidden rounded-lg border bg-card shadow-sm touch-manipulation">
               <img 
                 src={m.img} 
-                alt={`${m.name} — опытный ${m.role.toLowerCase()} сервисного центра ProFixNow с ${m.exp.toLowerCase()} работы в сфере ремонта бытовой техники`} 
+                alt={`${m.name} — славянский ${m.role.toLowerCase()} ProFixNow, выполняющий ремонт бытовой техники в Москве с опытом ${m.exp.toLowerCase()}`} 
                 className="aspect-[4/3] w-full object-cover" 
                 loading="lazy" 
                 width="300"

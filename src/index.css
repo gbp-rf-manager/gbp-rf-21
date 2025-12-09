@@ -122,6 +122,12 @@
     overflow-x: hidden;
   }
 
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
   /* Better focus visibility */
   *:focus-visible {
     @apply outline-none ring-2 ring-primary ring-offset-2;

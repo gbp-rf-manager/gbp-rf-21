@@ -8,8 +8,12 @@ import { About } from "@/sections/About";
 import { Contacts } from "@/sections/Contacts";
 import { Footer } from "@/components/site/Footer";
 import { ServiceLinks } from "@/components/site/ServiceLinks";
+import { usePageSEO } from "@/hooks/usePageSEO";
+import { baseUrl } from "@/data/service-pages";
 
 const Index = () => {
+  const heroOgImage =
+    "https://images.unsplash.com/photo-1582719478248-54e9f2b17ffe?auto=format&fit=crop&w=1200&q=80";
   const seoKeywords = {
     primary: "ремонт бытовой техники в москве",
     secondary: [
@@ -51,6 +55,14 @@ const Index = () => {
       "ремонт бытовых приборов",
     ],
   };
+
+  usePageSEO({
+    title: "Ремонт бытовой техники в Москве — ProFixNow",
+    description:
+      "ProFixNow: ремонт стиральных машин, холодильников, электроники и домашние услуги в Москве. Быстрый выезд, бесплатная диагностика, гарантия на работы.",
+    canonical: `${baseUrl}/`,
+    ogImage: heroOgImage,
+  });
 
   return (
     <div className="will-change-auto">

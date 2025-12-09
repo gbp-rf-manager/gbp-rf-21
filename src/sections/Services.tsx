@@ -6,13 +6,6 @@ const phone = "+7 495 128 09 84";
 const telHref = "tel:+74951280984";
 
 export const Services = () => {
-
-  const handleServiceClick = (e: React.MouseEvent, serviceId: string) => {
-    e.preventDefault();
-    // Navigate to contacts section or trigger call
-    window.location.href = telHref;
-  };
-
   return (
     <section id="services" className="section scroll-mt-24 py-10 sm:py-14 md:py-16">
       <header>
@@ -38,7 +31,6 @@ export const Services = () => {
                 key={service.id}
                 service={service}
                 delay={categoryIdx * 50 + idx * 40}
-                onClick={(e) => handleServiceClick(e, service.id)}
               />
             ))}
           </div>
@@ -51,23 +43,29 @@ export const Services = () => {
 interface ServiceListItemProps {
   service: ServiceItem;
   delay: number;
-  onClick: (e: React.MouseEvent) => void;
 }
 
-const ServiceListItem = ({ service, delay, onClick }: ServiceListItemProps) => {
+const ServiceListItem = ({ service, delay }: ServiceListItemProps) => {
   const Icon = service.icon;
+  const handleCardClick = () => {
+    if (service.slug) {
+      window.location.href = service.slug;
+      return;
+    }
+    window.location.href = telHref;
+  };
   
   return (
     <Reveal delay={delay}>
       <article
         className="group flex cursor-pointer gap-4 rounded-lg border bg-card p-4 shadow-sm touch-manipulation transition-all hover:shadow-elegant focus-within:ring-2 focus-within:ring-primary sm:p-5"
-        onClick={onClick}
+        onClick={handleCardClick}
         tabIndex={0}
         role="button"
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            onClick(e as any);
+            handleCardClick();
           }
         }}
       >
@@ -90,14 +88,30 @@ const ServiceListItem = ({ service, delay, onClick }: ServiceListItemProps) => {
             ))}
           </div>
         </div>
-        <Button 
-          variant="outline" 
-          size="sm"
-          className="hidden sm:flex self-center"
-          onClick={onClick}
-        >
-          Заказать
-        </Button>
+        <div className="flex flex-col gap-2 self-center sm:flex-row sm:items-center">
+          {service.slug && (
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="min-w-[120px]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <a href={service.slug}>Подробнее</a>
+            </Button>
+          )}
+          <Button
+            variant="secondary"
+            size="sm"
+            className="min-w-[120px]"
+            onClick={(e) => {
+              e.stopPropagation();
+              window.location.href = telHref;
+            }}
+          >
+            Заказать
+          </Button>
+        </div>
       </article>
     </Reveal>
   );

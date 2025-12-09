@@ -20,7 +20,7 @@ export const ServiceLinks = () => {
                 {category.services.map((service) => (
                   <li key={service.id}>
                     <a
-                      href={telHref}
+                      href={service.slug ?? telHref}
                       className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary focus-visible:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded px-1 py-0.5"
                     >
                       <ChevronRight className="h-3 w-3 flex-shrink-0 transition-transform group-hover:translate-x-1" />
