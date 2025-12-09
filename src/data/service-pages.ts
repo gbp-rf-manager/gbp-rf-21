@@ -19,17 +19,19 @@ export interface ServicePageContent {
 
 const baseUrl = "https://profix-now.ru";
 
-const masterLaundryImg = "/images/service-wm.jpg";
-const masterFridgeImg = "/images/service-fridge.jpg";
-const masterCoffeeImg = "/images/service-coffee.jpg";
-const masterDishwasherImg = "/images/service-dishwasher.jpg";
-const masterCooktopImg = "/images/service-cooktop.jpg";
-const masterLaptopImg = "/images/service-laptop.jpg";
-const masterTVImg = "/images/service-tv.jpg";
-const masterAppleImg = "/images/service-apple.jpg";
-const masterApartmentImg = "/images/service-apartment.jpg";
-const masterPlumbingImg = "/images/service-plumbing.jpg";
-const masterElectricImg = "/images/service-electric.jpg";
+const cdnBase = "https://profix-now.ru/images";
+
+const masterLaundryImg = `${cdnBase}/service-wm.jpg`;
+const masterFridgeImg = `${cdnBase}/service-fridge.jpg`;
+const masterCoffeeImg = `${cdnBase}/service-coffee.jpg`;
+const masterDishwasherImg = `${cdnBase}/service-dishwasher.jpg`;
+const masterCooktopImg = `${cdnBase}/service-cooktop.jpg`;
+const masterLaptopImg = `${cdnBase}/service-laptop.jpg`;
+const masterTVImg = `${cdnBase}/service-tv.jpg`;
+const masterAppleImg = `${cdnBase}/service-apple.jpg`;
+const masterApartmentImg = `${cdnBase}/service-apartment.jpg`;
+const masterPlumbingImg = `${cdnBase}/service-plumbing.jpg`;
+const masterElectricImg = `${cdnBase}/service-electric.jpg`;
 
 const buildSteps = (service: string): { title: string; desc: string }[] => [
   { title: "Заявка", desc: `Принимаем заявку по телефону, уточняем симптомы ${service} и удобное время визита в Москве.` },

@@ -15,9 +15,9 @@ export const About = () => {
       </header>
       <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
         {[
-          { img: "/images/team-1.jpg", name: "Иван Петров", role: "Главный мастер", exp: "10+ лет опыта" },
-          { img: "/images/team-2.jpg", name: "Анна Соколова", role: "Ведущий диагност", exp: "7+ лет опыта" },
-          { img: "/images/team-3.jpg", name: "Сергей Кузнецов", role: "Мастер-универсал", exp: "5+ лет опыта" },
+          { img: "https://profix-now.ru/images/team-1.jpg", name: "Иван Петров", role: "Главный мастер", exp: "10+ лет опыта" },
+          { img: "https://profix-now.ru/images/team-2.jpg", name: "Анна Соколова", role: "Ведущий диагност", exp: "7+ лет опыта" },
+          { img: "https://profix-now.ru/images/team-3.jpg", name: "Сергей Кузнецов", role: "Мастер-универсал", exp: "5+ лет опыта" },
         ].map((m, i) => (
           <Reveal key={m.name} delay={i * 80}>
             <article className="overflow-hidden rounded-lg border bg-card shadow-sm touch-manipulation">

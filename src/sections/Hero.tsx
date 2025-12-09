@@ -6,7 +6,7 @@ import { getHeroContent } from "@/lib/hero-content";
 
 const phone = "+7 495 128 09 84";
 const telHref = "tel:+74951280984";
-const heroImg = "/images/hero-main.jpg";
+const heroImg = "https://profix-now.ru/images/hero-main.jpg";
 
 export const Hero = () => {
   const heroContent = useMemo(() => getHeroContent(), []);
