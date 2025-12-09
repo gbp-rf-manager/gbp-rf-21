@@ -56,6 +56,18 @@ export const ServicePage = ({ slug }: ServicePageProps) => {
                   </p>
                 </Reveal>
               ))}
+              <Reveal delay={140}>
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <div className="rounded-lg border bg-card p-4 shadow-sm">
+                    <div className="text-sm font-semibold text-primary">Выезд по Москве</div>
+                    <p className="mt-1 text-sm text-muted-foreground">30–60 минут либо в согласованное время</p>
+                  </div>
+                  <div className="rounded-lg border bg-card p-4 shadow-sm">
+                    <div className="text-sm font-semibold text-primary">Бесплатная диагностика</div>
+                    <p className="mt-1 text-sm text-muted-foreground">Перед согласованием работ</p>
+                  </div>
+                </div>
+              </Reveal>
               {page.relatedLinks.length > 0 && (
                 <Reveal delay={140}>
                   <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -107,6 +119,7 @@ export const ServicePage = ({ slug }: ServicePageProps) => {
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
+                  referrerPolicy="no-referrer"
                   width="900"
                   height="675"
                 />
@@ -180,10 +193,10 @@ export const ServicePage = ({ slug }: ServicePageProps) => {
           </div>
         </section>
 
-        <section className="section space-y-6" id="reasons">
+        <section className="section space-y-6">
           <Reveal>
             <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">
-              Почему выбирают нас
+              Преимущества сервиса ProFixNow
             </h2>
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -196,6 +209,55 @@ export const ServicePage = ({ slug }: ServicePageProps) => {
                 </article>
               </Reveal>
             ))}
+          </div>
+        </section>
+
+        <section className="section space-y-6" id="reasons">
+          <Reveal>
+            <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">
+              Почему выбирают нас для этой услуги
+            </h2>
+          </Reveal>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {page.reasons.map((reason, idx) => (
+              <Reveal key={reason} delay={idx * 70}>
+                <article className="rounded-lg border bg-card p-4 shadow-sm h-full">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {reason}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        <section className="section space-y-6">
+          <div className="rounded-xl border bg-card p-6 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">
+              Связаться с мастером
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Быстрый вызов по телефону или заявка в один клик. Уточним модель, симптомы и договоримся о времени.
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+              <Button
+                asChild
+                variant="phone"
+                size="lg"
+                className="min-h-[48px] w-full sm:w-auto"
+                aria-label={`Позвонить ${phone}`}
+              >
+                <a href={telHref}>Позвонить {phone}</a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="min-h-[48px] w-full sm:w-auto"
+              >
+                <a href="#faq">Посмотреть ответы</a>
+              </Button>
+            </div>
           </div>
         </section>
 

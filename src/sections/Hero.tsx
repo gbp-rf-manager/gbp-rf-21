@@ -58,6 +58,7 @@ export const Hero = () => {
             className="aspect-[4/3] h-full w-full object-cover sm:aspect-[3/2] lg:aspect-[4/3]" 
             loading="eager"
             fetchPriority="high"
+            referrerPolicy="no-referrer"
             width="600"
             height="450"
           />

@@ -2,6 +2,7 @@ import { Menu, Phone, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
+import { servicePages } from "@/data/service-pages";
 
 const phone = "+7 495 128 09 84";
 const telHref = "tel:+74951280984";
@@ -63,6 +64,25 @@ export const Header = () => {
         </Sheet>
       </div>
       </div>
+      <ServiceSubmenu />
     </header>
+  );
+};
+
+const ServiceSubmenu = () => {
+  return (
+    <div className="border-t bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+      <div className="section flex items-center gap-3 overflow-x-auto py-2 text-xs sm:text-sm">
+        {servicePages.map((service) => (
+          <a
+            key={service.slug}
+            href={service.slug}
+            className="whitespace-nowrap rounded-full border px-3 py-1 text-muted-foreground transition hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          >
+            {service.h1}
+          </a>
+        ))}
+      </div>
+    </div>
   );
 };

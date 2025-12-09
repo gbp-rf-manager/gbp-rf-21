@@ -26,6 +26,7 @@ export const About = () => {
                 alt={`${m.name} — славянский ${m.role.toLowerCase()} ProFixNow, выполняющий ремонт бытовой техники в Москве с опытом ${m.exp.toLowerCase()}`} 
                 className="aspect-[4/3] w-full object-cover" 
                 loading="lazy" 
+                referrerPolicy="no-referrer"
                 width="300"
                 height="225"
               />
