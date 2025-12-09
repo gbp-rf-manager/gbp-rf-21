@@ -58,7 +58,7 @@ const ServiceListItem = ({ service, delay }: ServiceListItemProps) => {
   return (
     <Reveal delay={delay}>
       <article
-        className="group flex cursor-pointer gap-4 rounded-lg border bg-card p-4 shadow-sm touch-manipulation transition-all hover:shadow-elegant focus-within:ring-2 focus-within:ring-primary sm:p-5"
+        className="group flex cursor-pointer items-start gap-4 rounded-lg border bg-card p-4 shadow-sm touch-manipulation transition-all hover:shadow-elegant focus-within:ring-2 focus-within:ring-primary sm:items-center sm:p-5"
         onClick={handleCardClick}
         tabIndex={0}
         role="button"
@@ -88,13 +88,13 @@ const ServiceListItem = ({ service, delay }: ServiceListItemProps) => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-2 self-center sm:flex-row sm:items-center">
+        <div className="mt-auto flex w-full flex-col gap-2 self-stretch sm:w-auto sm:flex-row sm:items-center">
           {service.slug && (
             <Button
               asChild
               variant="outline"
               size="sm"
-              className="min-w-[120px]"
+              className="min-w-[120px] w-full sm:w-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <a href={service.slug}>Подробнее</a>
@@ -103,7 +103,7 @@ const ServiceListItem = ({ service, delay }: ServiceListItemProps) => {
           <Button
             variant="secondary"
             size="sm"
-            className="min-w-[120px]"
+            className="min-w-[120px] w-full sm:w-auto"
             onClick={(e) => {
               e.stopPropagation();
               window.location.href = telHref;
