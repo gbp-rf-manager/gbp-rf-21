@@ -1,15 +1,15 @@
 // Импортируем локальные изображения
-import serviceWashingMachine from "@/assets/service-washing-machine-v2.jpg";
-import serviceFridge from "@/assets/service-fridge-v2.jpg";
-import serviceCoffee from "@/assets/service-coffee-v2.jpg";
-import serviceDishwasher from "@/assets/service-dishwasher-v2.jpg";
+import serviceWashingMachine from "@/assets/service-washing-machine-gen.jpg";
+import serviceFridge from "@/assets/service-fridge-gen.jpg";
+import serviceCoffee from "@/assets/service-coffee-gen.jpg";
+import serviceDishwasher from "@/assets/service-dishwasher-gen.jpg";
 import serviceCooktop from "@/assets/service-cooktop-v2.jpg";
-import serviceLaptop from "@/assets/service-laptop-v2.jpg";
+import serviceLaptop from "@/assets/service-apple-gen.jpg";
 import serviceTV from "@/assets/service-tv-v2.jpg";
-import serviceApple from "@/assets/service-apple-v2.jpg";
-import serviceApartment from "@/assets/service-apartment-v2.jpg";
-import servicePlumbing from "@/assets/service-plumbing-v2.jpg";
-import serviceElectric from "@/assets/service-electric-v2.jpg";
+import serviceApple from "@/assets/service-apple-gen.jpg";
+import serviceApartment from "@/assets/service-apartment-gen.jpg";
+import servicePlumbing from "@/assets/service-plumbing-gen.jpg";
+import serviceElectric from "@/assets/service-electric-gen.jpg";
 
 export interface ServicePageContent {
   slug: string;
@@ -300,7 +300,7 @@ export const servicePages: ServicePageContent[] = [
     h1: "Ремонт ПК и ноутбуков в Москве",
     heroImage: {
       src: serviceLaptop,
-      alt: "Мастер по ремонту ноутбука в Москве",
+      alt: "Рабочее место с техникой для ремонта ноутбуков и ПК в Москве",
     },
     intro: [
       "Помогаем, когда ноутбук или компьютер греется, зависает или не включается. Чистим систему охлаждения, меняем термопасту, диагностируем материнскую плату и блок питания. При необходимости модернизируем: устанавливаем SSD, наращиваем память, настраиваем системы для работы и учёбы.",
@@ -388,7 +388,7 @@ export const servicePages: ServicePageContent[] = [
     h1: "Ремонт техники Apple в Москве",
     heroImage: {
       src: serviceApple,
-      alt: "Мастер по ремонту техники Apple в Москве",
+      alt: "Рабочая поверхность с техникой Apple для ремонта в Москве",
     },
     intro: [
       "Обслуживаем MacBook, iPhone, iPad и Apple Watch в Москве. Помогаем при повреждении экрана, быстрой разрядке, перегреве и отказах клавиатуры. Работаем аккуратно, учитывая особенности оригинальных комплектующих и защит.",
@@ -432,7 +432,7 @@ export const servicePages: ServicePageContent[] = [
     h1: "Ремонт квартир в Москве",
     heroImage: {
       src: serviceApartment,
-      alt: "Мастер по ремонту квартир в Москве",
+      alt: "Мастер красит стены при ремонте квартиры в Москве",
     },
     intro: [
       "ProFixNow берётся за мелкий и средний ремонт квартир в Москве: освежаем отделку, устраняем бытовые неисправности, готовим жильё к сдаче или заселению. Работаем аккуратно, соблюдаем порядок, закрываем задачи по электрике и сантехнике, чтобы вам не пришлось звать разных подрядчиков.",
@@ -476,7 +476,7 @@ export const servicePages: ServicePageContent[] = [
     h1: "Ремонт сантехники в Москве",
     heroImage: {
       src: servicePlumbing,
-      alt: "Мастер по ремонту сантехники в Москве",
+      alt: "Сантехник чинит смеситель в Москве",
     },
     intro: [
       "Устраняем протечки, меняем смесители, подключаем унитазы и ванны, прочищаем трубы. Работаем по Москве, аккуратно перекрываем воду, защищаем отделку и меблировку. Проверяем состояние подводки и сифонов, чтобы предотвратить повторные проблемы.",
@@ -520,7 +520,7 @@ export const servicePages: ServicePageContent[] = [
     h1: "Электрика в Москве",
     heroImage: {
       src: serviceElectric,
-      alt: "Мастер-электрик в Москве",
+      alt: "Электрик обслуживает электрощит в Москве",
     },
     intro: [
       "Выполняем электромонтажные работы в Москве: устанавливаем розетки и выключатели, подключаем технику, настраиваем щитки и освещение. Проверяем линии на нагрузку, чтобы техника работала без перегрузок и отключений.",
