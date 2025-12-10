@@ -198,11 +198,11 @@ export const ServicePage = ({ slug }: ServicePageProps) => {
             </h2>
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {page.reasons.map((reason, idx) => (
-              <Reveal key={reason} delay={idx * 70}>
+            {page.advantages.map((item, idx) => (
+              <Reveal key={item} delay={idx * 70}>
                 <article className="rounded-lg border bg-card p-4 shadow-sm h-full">
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    {reason}
+                    {item}
                   </p>
                 </article>
               </Reveal>

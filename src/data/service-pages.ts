@@ -24,6 +24,7 @@ export interface ServicePageContent {
   subtypes: string[];
   issues: { title: string; desc: string }[];
   steps: { title: string; desc: string }[];
+  advantages: string[];
   reasons: string[];
   faq: { question: string; answer: string }[];
   relatedLinks: { href: string; label: string }[];
@@ -40,6 +41,15 @@ const buildSteps = (service: string): { title: string; desc: string }[] => [
   { title: "Проверка и рекомендации", desc: `Тестируем работу, даём рекомендации по профилактике, фиксируем гарантию.` },
 ];
 
+const buildAdvantages = (): string[] => [
+  "Сервисный центр в Москве: работаем без выходных, планируем визит под ваш график.",
+  "Сертифицированные мастера и проверенные инструменты — без учеников и случайных подрядчиков.",
+  "Привозим ходовые запчасти с собой, работаем аккуратно и убираем после ремонта.",
+  "Без предоплаты и лишних услуг: сначала диагностика, затем согласование сметы.",
+  "Чёткие сроки и прозрачные цены: фиксируем договорённости до начала работ.",
+  "Гарантия на работы и детали, поддержка после ремонта — отвечаем на вопросы и помогаем с настройкой.",
+];
+
 const buildReasons = (service: string): string[] => [
   `Глубоко диагностируем ${service} на месте без вывоза: фиксируем причину до начала работ.`,
   "Согласовываем смету заранее — запчасти и работа понятны до старта.",
@@ -48,6 +58,8 @@ const buildReasons = (service: string): string[] => [
   "Даем рекомендации по профилактике с учётом модели и условий эксплуатации.",
   "После ремонта остаёмся на связи по гарантии и любым вопросам эксплуатации.",
 ];
+
+const commonAdvantages = buildAdvantages();
 
 const buildFaq = (service: string, extra: string[]): { question: string; answer: string }[] => [
   {
@@ -104,6 +116,7 @@ export const servicePages: ServicePageContent[] = [
       { title: "Плохо отжимает", desc: "Настраиваем скорости, проверяем датчики оборотов и дренажную систему." },
     ],
     steps: buildSteps("стиральной машины"),
+    advantages: commonAdvantages,
     reasons: buildReasons("стиральных машин"),
     faq: buildFaq("стиральной машины", [
       "Можно ли стирать до приезда мастера? — Лучше остановить использование при течи, ошибках или запахе гари, чтобы не усугубить поломку.",
@@ -149,6 +162,7 @@ export const servicePages: ServicePageContent[] = [
       { title: "Перегрев корпуса", desc: "Проверяем теплообменник, вентиляцию, расстояние до стены, корректность установки." },
     ],
     steps: buildSteps("холодильника"),
+    advantages: commonAdvantages,
     reasons: buildReasons("холодильников и морозильных камер"),
     faq: buildFaq("холодильника", [
       "Нужна ли разморозка до приезда? — Если слышите шум вентилятора или видите снег на стенках, можно отключить и приоткрыть дверь, но мы подскажем при звонке, как лучше поступить.",
@@ -193,6 +207,7 @@ export const servicePages: ServicePageContent[] = [
       { title: "Не взбивает молоко", desc: "Разбираем и чистим капучинатор, проверяем подачу пара, заменяем уплотнения." },
     ],
     steps: buildSteps("кофемашины"),
+    advantages: commonAdvantages,
     reasons: buildReasons("кофемашин"),
     faq: buildFaq("кофемашины", [
       "Можно ли пользоваться до приезда? — Если есть утечка или запах гари, лучше отключить. При слабом напоре или ошибках — не откладывайте диагностику.",
@@ -237,6 +252,7 @@ export const servicePages: ServicePageContent[] = [
       { title: "Не открывается таблетница", desc: "Проверяем привод крышки, цепи управления, блокируемые детали." },
     ],
     steps: buildSteps("посудомоечной машины"),
+    advantages: commonAdvantages,
     reasons: buildReasons("посудомоечных машин"),
     faq: buildFaq("посудомоечной машины", [
       "Нужно ли отключать воду заранее? — Если есть протечка, перекройте воду. В остальном мастер сам перекроет и подключит назад после работ.",
@@ -281,6 +297,7 @@ export const servicePages: ServicePageContent[] = [
       { title: "Запах гари", desc: "Осматриваем проводку, клеммы, устраняем следы оплавления и меняем повреждённые элементы." },
     ],
     steps: buildSteps("варочной панели или духового шкафа"),
+    advantages: commonAdvantages,
     reasons: buildReasons("варочных панелей, духовых шкафов и электроплит"),
     faq: buildFaq("варочной панели и духового шкафа", [
       "Можно ли готовить до визита? — Если конфорка искрит, греет с перебоями или выбивает автомат, лучше отключить питание и дождаться мастера.",
@@ -325,6 +342,7 @@ export const servicePages: ServicePageContent[] = [
       { title: "Шумный или медленный диск", desc: "Меняем HDD на SSD, переносим данные, настраиваем быстрый старт." },
     ],
     steps: buildSteps("ноутбука или компьютера"),
+    advantages: commonAdvantages,
     reasons: buildReasons("ПК и ноутбуков"),
     faq: buildFaq("ПК или ноутбука", [
       "Можно ли сохранить данные? — Да, заранее уточняем важные файлы, делаем резервное копирование при необходимости.",
@@ -369,6 +387,7 @@ export const servicePages: ServicePageContent[] = [
       { title: "Не видит HDMI/USB", desc: "Проверяем разъёмы, цепи питания портов, программные настройки." },
     ],
     steps: buildSteps("телевизора"),
+    advantages: commonAdvantages,
     reasons: buildReasons("телевизоров"),
     faq: buildFaq("телевизора", [
       "Можно ли перевозить телевизор в сервис? — Часто ремонтируем на месте. Если нужна мастерская, упакуем и доставим аккуратно.",
@@ -413,6 +432,7 @@ export const servicePages: ServicePageContent[] = [
       { title: "Сбой Face ID/Touch ID", desc: "Проверяем шлейфы и датчики, рекомендуем безопасные варианты восстановления." },
     ],
     steps: buildSteps("техники Apple"),
+    advantages: commonAdvantages,
     reasons: buildReasons("техники Apple"),
     faq: buildFaq("устройства Apple", [
       "Сохраняете ли данные? — Да, по возможности делаем резервные копии перед вмешательством и предупреждаем, если есть риск.",
@@ -457,6 +477,7 @@ export const servicePages: ServicePageContent[] = [
       { title: "Неаккуратные швы в санузле", desc: "Обновляем герметик, устраняем плесень, восстанавливаем гидроизоляцию локально." },
     ],
     steps: buildSteps("ремонта квартиры"),
+    advantages: commonAdvantages,
     reasons: buildReasons("ремонта квартир"),
     faq: buildFaq("ремонта квартиры", [
       "Работаете поэтапно? — Да, можем разбить задачи на очереди, чтобы жильцы могли оставаться в квартире.",
@@ -501,6 +522,7 @@ export const servicePages: ServicePageContent[] = [
       { title: "Износ подводок", desc: "Меняем гибкие шланги и запорную арматуру, проверяем после установки." },
     ],
     steps: buildSteps("сантехники"),
+    advantages: commonAdvantages,
     reasons: buildReasons("сантехнических работ"),
     faq: buildFaq("сантехники", [
       "Нужно ли покупать материалы заранее? — Можно использовать ваши или привезём свои по согласованию. Всегда уточняем диаметр и тип соединений.",
@@ -544,6 +566,7 @@ export const servicePages: ServicePageContent[] = [
       { title: "Греется вилка или кабель", desc: "Находим перегрузку, меняем штекер, пересчитываем сечение проводов." },
     ],
     steps: buildSteps("электрики"),
+    advantages: commonAdvantages,
     reasons: buildReasons("электромонтажных работ"),
     faq: buildFaq("электрики", [
       "Нужен ли доступ к щитку? — Да, чтобы проверить автоматы, УЗО и распределение линий. Поможем подписать группы для удобства.",
