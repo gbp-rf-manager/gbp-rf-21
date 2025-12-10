@@ -1,6 +1,7 @@
 // Импортируем локальные изображения
 import serviceWashingMachine from "@/assets/service-washing-machine-gen.jpeg";
 import serviceFridge from "@/assets/service-fridge.jpg";
+import heroRepair from "@/assets/hero-repair-gen.jpeg";
 import serviceCoffee from "@/assets/service-coffee-gen.jpeg";
 import serviceDishwasher from "@/assets/service-dishwasher-gen.webp";
 import serviceCooktop from "@/assets/service-cooktop-v2.jpg";
@@ -135,8 +136,8 @@ export const servicePages: ServicePageContent[] = [
     description: "Ремонт холодильников и морозильных камер в Москве: утечки, No Frost, компрессор, быстрая диагностика и выезд мастера ProFixNow.",
     h1: "Ремонт холодильников в Москве",
     heroImage: {
-      src: serviceFridge,
-      alt: "Мастер по ремонту холодильника в Москве",
+      src: heroRepair,
+      alt: "Мастер ProFixNow выполняет ремонт холодильника в Москве",
     },
     intro: [
       "ProFixNow помогает, когда холодильник не морозит, шумит или даёт ошибку No Frost. Приезжаем по Москве, аккуратно работаем на кухне, проверяем температуру, герметичность контура и состояние компрессора. Не предлагаем лишнего — сначала выясняем причину, затем согласуем действия.",
