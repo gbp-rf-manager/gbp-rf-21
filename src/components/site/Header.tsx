@@ -28,7 +28,8 @@ export const Header = () => {
           <span className="text-lg font-semibold">ProFixNow</span>
         </a>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-6">
+          <DesktopServicesMenu />
           <NavLinks />
         </div>
 
@@ -71,7 +72,7 @@ export const Header = () => {
 
 const ServiceSubmenu = () => {
   return (
-    <div className="border-t bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+    <div className="border-t bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70 md:hidden">
       <div className="section flex items-center gap-3 overflow-x-auto py-2 text-xs sm:text-sm">
         {servicePages.map((service) => (
           <a
@@ -82,6 +83,38 @@ const ServiceSubmenu = () => {
             {service.h1}
           </a>
         ))}
+      </div>
+    </div>
+  );
+};
+
+const DesktopServicesMenu = () => {
+  return (
+    <div className="relative hidden md:block">
+      <div className="group relative">
+        <a
+          href="#services"
+          className="text-sm font-medium hover:underline underline-offset-4"
+          aria-label="Услуги"
+        >
+          Услуги
+        </a>
+        <div className="invisible absolute left-0 top-full z-50 mt-2 w-[540px] rounded-lg border bg-popover p-3 opacity-0 shadow-lg transition duration-200 group-hover:visible group-hover:opacity-100">
+          <div className="grid grid-cols-2 gap-3 text-sm">
+            {servicePages.map((service) => (
+              <a
+                key={service.slug}
+                href={service.slug}
+                className="rounded-md p-3 hover:bg-accent/60 hover:text-accent-foreground transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              >
+                <div className="text-sm font-semibold leading-tight">{service.h1}</div>
+                <div className="mt-1 text-xs text-muted-foreground line-clamp-2">
+                  {service.description}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
