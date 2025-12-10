@@ -21,7 +21,7 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="section flex h-16 items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2" aria-label="На главную">
           <div className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-secondary/90 text-secondary-foreground shadow-elegant">
             <Wrench className="h-5 w-5" aria-hidden />
           </div>
@@ -48,7 +48,7 @@ export const Header = () => {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="flex flex-col gap-6">
-            <a href="#top" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+            <a href="/" className="flex items-center gap-2" onClick={() => setOpen(false)} aria-label="На главную">
               <div className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-secondary/90 text-secondary-foreground">
                 <Wrench className="h-4 w-4" />
               </div>
